@@ -2,26 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import './fonts/space-grotesk/index';
+
+body {
+  position: relative;
+  color: #fff;
+  background: #000;
+  font-family: 'Space Grotesk';
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+:root {
+  --m-clr-bg-orange: #F0500E;
+  --m-clr-text-orange: #F98306;
+}
+
+.m-link {
+  color: #fff;
+
+  &:hover {
+    color: var(--m-clr-text-orange);
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.backdrop {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left:0;
+    background: rgba(0, 0, 0, 0.8);;
+  }
+}
+
+
+.btn-cta {
+  background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
+  border-radius: 6px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-cta-second {
+  position: relative;
+  background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
+  border-radius: 6px;
+  
+  padding-top: 13px;
+  padding-bottom: 13px;
+  text-transform: uppercase;
+  color: var(--m-clr-text-orange);
+  font-weight: 700;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px; right: 2px; bottom: 2px; left: 2px;
+    background: #000;
+    border-radius: 6px;
+  }
+}
+
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1
+}
+
+.swiper-vertical>.swiper-wrapper {
+  flex-direction: column
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
 }

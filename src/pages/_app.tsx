@@ -1,6 +1,13 @@
 import '@/styles/globals.scss';
+import 'swiper/css';
+
+import { LayoutMain } from '@/uikit/layout-main';
 import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <LayoutMain>
+      <Component {...pageProps} />
+    </LayoutMain>
+  );
 }
