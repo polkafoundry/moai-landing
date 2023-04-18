@@ -4,11 +4,9 @@ import { Header } from '../header';
 
 export function LayoutMain({ children }: PropsWithChildren) {
   return (
-    <div className='pt-[75px]'>
+    <div className='overflow-x-hidden'>
       <Header />
-      <div className='min-h-[calc(100vh-106px)]'>
-        {children}
-      </div>
+      {children}
 
       <Footer />
     </div>

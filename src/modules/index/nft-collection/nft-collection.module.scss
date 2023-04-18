@@ -1,0 +1,12 @@
+.slide-wrapper {
+  :global(.swiper-top) {
+    overflow: visible;
+    clip-path: polygon(100px 0%, 99999px 0%, 148% 333333px, 100px 99999px);
+    // clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 26% 100%);//path('M 0 200 L 0,75 A 1,1 1,1,1 2150,196 L 195 552 z');
+  }
+  :global(.swiper-bottom) {
+    overflow: visible;
+    // clip-path: polygon(100px 0%, 99999px 0%, 148% 333333px, 100px 99999px);
+    clip-path: path("M 0 293 L 0,0 A 1,1 1,1,1 2150,196 L 195 552 z");
+  }
+}

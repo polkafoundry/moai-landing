@@ -3,7 +3,7 @@ import styles from './header.module.scss';
 
 export function Header() {
   return (
-    <header className='fixed top-0 right-0 left-0 z-10'>
+    <header className='fixed top-0 right-0 left-0 z-10 select-none'>
       <div className='container mx-auto h-[75px] flex justify-between items-center'>
         <div className='text-[20px] font-semibold'>LOGO</div>
 

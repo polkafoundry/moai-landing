@@ -52,8 +52,7 @@ export function MainSlider() {
   const [swiperIndex, setSwiperIndex] = useState(0);
 
   return (
-    <main className='-mt-[75px] '>
-
+    <main>
       <Swiper
         onSwiper={setSwiper}
         onActiveIndexChange={swiper => setSwiperIndex(swiper.activeIndex)}
@@ -99,7 +98,7 @@ export function MainSlider() {
         ))}
       </Swiper>
 
-      <div className='container mx-auto grid grid-cols-12 relative text-white'>
+      <div className='container mx-auto grid grid-cols-12 relative text-white select-none'>
         <div className='col-span-8 relative'>
           <div className='absolute bottom-0 left-0 right-0 pb-[48px] lg:pb-[96px] flex justify-center gap-[30px] z-50'>
             {sliderThumbs.map((thumb, idx) => (

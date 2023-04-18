@@ -40,6 +40,20 @@ body {
   }
 }
 
+.backdrop-left {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left:0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    background: linear-gradient(90deg, #07030E 3.57%, rgba(7, 3, 14, 0) 100%);
+    z-index: 30;
+  }
+}
+
 
 .btn-cta {
   background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
