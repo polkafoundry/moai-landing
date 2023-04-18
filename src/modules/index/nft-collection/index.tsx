@@ -1,9 +1,8 @@
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
+import { Autoplay } from "swiper";
 import { EthIcon } from "@/uikit/icons/eth-icon";
 import { ImageCard2 } from "@/uikit/image-card";
 import clsx from "clsx";
-import { Swiper as SwiperClass, Navigation } from 'swiper';
-import { FreeMode, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './nft-collection.module.scss';
 
@@ -69,19 +68,18 @@ export function NftCollection() {
                 <Swiper
                   // onSwiper={setSwiper}
                   // onActiveIndexChange={swiper => setSwiperIndex(swiper.activeIndex)}
-                  // modules={[FreeMode, Pagination]}
+                  modules={[Autoplay]}
                   // freeMode={true}
                   className="swiper-top"
                   spaceBetween={12}
                   slidesPerView={3}
                   loop
                   centeredSlides
+                  speed={2000}
                   autoplay={{
-                    delay: 5000,
-                  }}
-                  navigation={{
-                    nextEl: '.next-slider',
-                    prevEl: '.prev-slider',
+                    reverseDirection: true,
+                    delay: 2000,
+                    pauseOnMouseEnter: true,
                   }}
                 >
                   {collection1.map((item, idx) => (
@@ -102,14 +100,13 @@ export function NftCollection() {
                 <Swiper
                   spaceBetween={12}
                   slidesPerView={3}
+                  modules={[Autoplay]}
                   className='swiper-bottom'
                   loop
+                  speed={2000}
                   autoplay={{
-                    delay: 5000,
-                  }}
-                  navigation={{
-                    nextEl: '.next-slider',
-                    prevEl: '.prev-slider',
+                    delay: 2000,
+                    pauseOnMouseEnter: true,
                   }}
                 >
                   {collection2.map((item, idx) => (
