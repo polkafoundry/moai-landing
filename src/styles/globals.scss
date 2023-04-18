@@ -54,6 +54,18 @@ body {
   }
 }
 
+.btn-white {
+  background: white;
+  color: black;
+  border-radius: 6px;
+  font-weight: 700;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
 
 .btn-cta {
   background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
@@ -69,7 +81,6 @@ body {
   position: relative;
   background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
   border-radius: 6px;
-  
   padding-top: 13px;
   padding-bottom: 13px;
   text-transform: uppercase;
