@@ -1,8 +1,4 @@
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
 import { MainSlider } from './main-slider/main-slider';
 import { NftCollection } from './nft-collection';
 import { StoryTelling } from './story-telling';
@@ -14,108 +10,51 @@ import { MoaiToken } from './moai-token';
 import { EvilClub } from './evil-club';
 import { FAQ } from './faq';
 
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+function getSections() {
+  return [
+    { content: <MainSlider />, ref: useRef<HTMLDivElement>() },
+    { content: <StoryTelling />, ref: useRef<HTMLDivElement>() },
+    { content: <NftCollection />, ref: useRef<HTMLDivElement>() },
+    { content: <OnChainGame />, ref: useRef<HTMLDivElement>() },
+    { content: <EvilClub />, ref: useRef<HTMLDivElement>() },
+    { content: <MoaiToken />, ref: useRef<HTMLDivElement>() },
+    { content: <FAQ />, ref: useRef<HTMLDivElement>() },
+  ];
 }
-
 export function Home() {
   const router = useRouter();
+  const [activeIdx, setActive] = useState(0);
+  const screenRef = useRef<HTMLDivElement>(null);
   const section = router.query.section as HomeSection || HomeSection.MAIN;
-  const circleRef = useRef<HTMLDivElement>(null);
-  const [activeSection, setActiveSection] = useState(0);
-  const scrollTween = useRef<any>();
-  const observer = useRef<any>();
+  const transitionRef = useRef<any>();
 
   useEffect(() => {
-    goToSection(homeSectionArr.indexOf(section));
+    const activeIdx = homeSectionArr.indexOf(section);
+    setActive(activeIdx);
   }, [section])
 
-  function goToSection(i: number) {
-    setActiveSection(i);
-    scrollTween.current = gsap.to(window, {
-      scrollTo: { y: i * innerHeight, autoKill: false },
-      // delay: 1,
-      onStart: () => {
-        observer.current.disable(); // for touch devices, as soon as we start forcing scroll it should stop any current touch-scrolling, so we just disable() and enable() the normalizeScroll observer
-        observer.current.enable();
-      },
-      duration: 1,
-      onComplete: () => scrollTween.current = null,
-      overwrite: true,
-    });
-  }
-
-  useLayoutEffect(() => {
-    let panels: any = gsap.utils.toArray("#ddddddddd .panel");
-    observer.current = ScrollTrigger.normalizeScroll(true) as Observer;
-
-    // on touch devices, ignore touchstart events if there's an in-progress tween so that touch-scrolling doesn't interrupt and make it wonky
-    document.addEventListener("touchstart", e => {
-      if (scrollTween.current) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
+  useEffect(() => {
+    if (!screenRef.current) return;
+    screenRef.current.onwheel = function (e) {
+      function start() {
+        const nextIdx = e.deltaY > 0 ? Math.min(6, activeIdx + 1) : Math.max(0, activeIdx - 1);
+        const secKey = homeSectionArr[nextIdx];
+        router.push(`/?section=${secKey}`, undefined, { shallow: true })
       }
-    }, { capture: true, passive: false });
 
-    // panels.forEach((panel: any, i: number) => {
-    //   ScrollTrigger.create({
-    //     trigger: panel,
-    //     start: "top bottom",
-    //     end: "+=199%",
-    //     // onToggle: self => {
-    //     //   if (self.isActive && !scrollTween.current) {
-    //     //     router.replace(`/?section=${homeSectionArr[i]}`, undefined, {
-    //     //       shallow: true,
-
-    //     //     })
-    //     //   }
-    //     // }
-    //   });
-    // });
-
-    ScrollTrigger.create({
-      start: 0,
-      end: "max",
-      snap: 1 / (panels.length - 1),
-      onEnter: function (self) {
-      },
-      onUpdate: function (self) {
-        console.log('onUpdate', self)
-      }
-    })
-  }, [])
+      clearTimeout(transitionRef.current);
+      transitionRef.current = setTimeout(start, 400);
+    }
+  }, [activeIdx])
+  const sections = getSections();
 
   return (
-    <div id='ddddddddd' onScroll={e => e.preventDefault()}>
+    <div ref={screenRef} onScroll={e => e.preventDefault()}>
       {/* <div className='fixed top-0 left-0 text-[50px] text-white z-50'>{activeSection}</div> */}
       <Header />
-      <div className='panel main-slider'>
-        <MainSlider />
-      </div>
-
-      <div ref={circleRef} id="thirdCircle" className='panel story-telling'>
-        <StoryTelling />
-      </div>
-
-      <div className='panel nft-collection'>
-        <NftCollection />
-      </div>
-
-      <div className='panel on-chain-game'>
-        <OnChainGame />
-      </div>
-
-      <div className='panel'>
-        <EvilClub />
-      </div>
-
-      <div className='panel'>
-        <MoaiToken />
-      </div>
-
-      <div className='panel'>
-        <FAQ />
+      <div className='opacity-[0.4] md:opacity-[0.7]'></div>
+      <div className='transition-all duration-700'>
+        {sections[activeIdx].content}
       </div>
     </div>
   )

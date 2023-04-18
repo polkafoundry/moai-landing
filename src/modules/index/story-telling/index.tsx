@@ -1,9 +1,10 @@
 export function StoryTelling() {
   return (
-    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center"  style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
         <h1 className='text-[48px] font-[500] mb-[25px]'>Story telling</h1>
-        <div className='grid grid-cols-3 gap-[40px]'>
+
+        <div className='grid grid-cols-3 gap-[40px] '>
           <div className='col-span-2'>
             <div className='flex gap-[40px] text-white/80 mb-[28px]'>
               <div>Some time ago, there was an ancient god named the Makemake, who guarded the Rapa Nui of Easter Island, helped its islanders build Moai statues, and imbued these statues with the Mana spirit - symboling “Living for the future”. The Mana rests in the eyes of Moai, following the Rapa Nui islanders in their daily life and blessing them with strength, bravery, prosperity, peace, and protection. </div>

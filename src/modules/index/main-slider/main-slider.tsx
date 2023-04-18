@@ -108,11 +108,11 @@ export function MainSlider() {
               <div key={idx} className={clsx('w-[80px] flex flex-col gap-2 items-center text-[20px] text-white/50 cursor-pointer')}
                 onClick={() => swiper.slideTo(idx)}
               >
-                <img src={thumb.img} className={clsx('w-[80px] h-[80px] rounded-full transition-all ease-out duration-1000', {
+                <img src={thumb.img} className={clsx('w-[80px] h-[80px] rounded-full transition-all ease-out duration-300', {
                   'border-[2px] border-orange-500': idx === swiperIndex,
                   'border-[2px] border-transparent': idx !== swiperIndex,
                 })} />
-                <div className={clsx('transition-all ease-out duration-1000', {
+                <div className={clsx('transition-all ease-out duration-300', {
                   'text-white': idx === swiperIndex,
                 })}>{thumb.name}</div>
               </div>

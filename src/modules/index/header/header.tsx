@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { HomeSection } from "../const";
 import styles from './header.module.scss';
 
@@ -12,6 +14,9 @@ const navItems = [
 ]
 
 export function Header() {
+  const router = useRouter();
+  const section = router.query.section as HomeSection || HomeSection.MAIN;
+
   return (
     <header className='fixed top-0 right-0 left-0 z-40 select-none'>
       <div className='container mx-auto h-[75px] flex justify-between items-center'>
@@ -20,15 +25,15 @@ export function Header() {
         <div className='flex gap-4'>
           {navItems.map((item, idx) => (
             <Link
-              key={idx} className={styles['nav-item']} href={`/?section=${item.sec}`} shallow
+              key={idx} className={clsx(
+                styles['nav-item'], 'transition-all duration-300',
+                {
+                  [styles.active]: section === item.sec,
+                })}
+              href={`/?section=${item.sec}`}
+              shallow
             >{item.label}</Link>
           ))}
-          {/*           
-          <Link className={styles['nav-item']} href='/?section=nft-collection'>NFT Collection</Link>
-          <Link className={styles['nav-item']} href='/?section=on-chain-game'>On-chain game</Link>
-          <Link className={styles['nav-item']} href='/?section=evil-club'>Evil club</Link>
-          <Link className={styles['nav-item']} href='/?section=moai-token'>Moai token</Link>
-          <Link className={styles['nav-item']} href='/?section=faq'>FAQ</Link> */}
         </div>
       </div>
     </header>
