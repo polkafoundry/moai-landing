@@ -2,7 +2,7 @@ export function StoryTelling() {
   return (
     <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center"  style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
-        <h1 className='text-[48px] font-semibold mb-[25px]'>Story telling</h1>
+        <h1 className='text-[48px] font-[500] mb-[25px]'>Story telling</h1>
         <div className='grid grid-cols-3 gap-[40px]'>
           <div className='col-span-2'>
             <div className='flex gap-[40px] text-white/80 mb-[28px]'>
