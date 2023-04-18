@@ -30,7 +30,6 @@ export function EvilClub() {
 
         <div className='relative'>
           <Swiper
-
             pagination={{
               clickable: true,
               el: '#evil-club-pagination',

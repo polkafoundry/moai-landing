@@ -3,7 +3,7 @@ import { OpenseaIcon } from '@/uikit/icons/opensea-icon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import clsx from 'clsx';
 import styles from './main-slider.module.scss';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 SwiperClass.use([Navigation]);
 
 const data = [
@@ -48,11 +48,28 @@ const sliderThumbs = [
 ]
 
 export function MainSlider() {
+  const elRef = useRef<HTMLDivElement>(null);
   const [swiper, setSwiper] = useState<SwiperClass>(null as any);
   const [swiperIndex, setSwiperIndex] = useState(0);
 
+
+  useEffect(() => {
+    if (!elRef.current) return;
+
+    elRef.current.onwheel = function (e) {
+      if (swiperIndex === 4 && e.deltaY > 0) {
+
+      } else {
+        e.stopPropagation();
+      }
+
+      const nextIdx = e.deltaY > 0 ? Math.min(4, swiperIndex + 1) : Math.max(0, swiperIndex - 1);
+      swiper.slideTo(nextIdx);
+    }
+  }, [elRef, swiperIndex, swiper])
+
   return (
-    <main>
+    <main ref={elRef}>
       <Swiper
         onSwiper={setSwiper}
         modules={[Autoplay, EffectFade]}

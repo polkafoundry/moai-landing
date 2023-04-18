@@ -12,13 +12,13 @@ import { FAQ } from './faq';
 
 function getSections() {
   return [
-    { content: <MainSlider />, ref: useRef<HTMLDivElement>() },
-    { content: <StoryTelling />, ref: useRef<HTMLDivElement>() },
-    { content: <NftCollection />, ref: useRef<HTMLDivElement>() },
-    { content: <OnChainGame />, ref: useRef<HTMLDivElement>() },
-    { content: <EvilClub />, ref: useRef<HTMLDivElement>() },
-    { content: <MoaiToken />, ref: useRef<HTMLDivElement>() },
-    { content: <FAQ />, ref: useRef<HTMLDivElement>() },
+    { content: <MainSlider /> },
+    { content: <StoryTelling /> },
+    { content: <NftCollection /> },
+    { content: <OnChainGame /> },
+    { content: <EvilClub /> },
+    { content: <MoaiToken /> },
+    { content: <FAQ /> },
   ];
 }
 export function Home() {
