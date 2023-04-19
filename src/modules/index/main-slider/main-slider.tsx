@@ -49,6 +49,7 @@ const sliderThumbs = [
 
 export function MainSlider() {
   const elRef = useRef<HTMLDivElement>(null);
+  const slideToRef = useRef<any>();
   const [swiper, setSwiper] = useState<SwiperClass>(null as any);
   const [swiperIndex, setSwiperIndex] = useState(0);
 
@@ -63,8 +64,11 @@ export function MainSlider() {
         e.stopPropagation();
       }
 
+      clearTimeout(slideToRef.current);
+      slideToRef.current = setTimeout(() => {
       const nextIdx = e.deltaY > 0 ? Math.min(4, swiperIndex + 1) : Math.max(0, swiperIndex - 1);
       swiper.slideTo(nextIdx);
+      }, 200);
     }
   }, [elRef, swiperIndex, swiper])
 
