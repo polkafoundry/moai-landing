@@ -1,0 +1,10 @@
+.chart {
+  :global(.label-wrapper .label) {
+    background: linear-gradient(86.03deg, #FF1100 4.07%, #FC7B03 79.02%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 500;
+  }
+}

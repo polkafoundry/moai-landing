@@ -3,7 +3,7 @@ export enum HomeSection {
   STORY_TELLING = 'story-telling',
   NFT_COLLECTION = 'nft-collection',
   ONCHAIN_GAME = 'onchain-game',
-  EVIL_CLUC = 'evil-club',
+  EVIL_CLUB = 'evil-club',
   MOAI_TOKEN = 'moai-token',
   FAQ = 'faq',
 }

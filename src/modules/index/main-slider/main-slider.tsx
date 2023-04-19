@@ -3,7 +3,7 @@ import { OpenseaIcon } from '@/uikit/icons/opensea-icon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import clsx from 'clsx';
 import styles from './main-slider.module.scss';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 SwiperClass.use([Navigation]);
 
@@ -74,7 +74,7 @@ export function MainSlider() {
     }
   }, [elRef, swiperIndex, swiper]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!swiper || !(swiper as any).enabled) return;
 
     const idx = Math.max(0, sliderThumbs.findIndex(slider => slider.name === tribe) || 0);
@@ -133,7 +133,7 @@ export function MainSlider() {
 
       <div className='container mx-auto grid grid-cols-12 relative text-white select-none'>
         <div className='col-span-8 relative'>
-          <div className='absolute bottom-0 left-0 right-0 pb-[48px] lg:pb-[96px] flex justify-center gap-[30px] z-50'>
+          <div className='absolute bottom-0 left-0 right-0 pb-[48px] lg:pb-[140px] flex justify-center gap-[30px] z-50'>
             {sliderThumbs.map((thumb, idx) => (
               <div key={idx} className={clsx('w-[80px] flex flex-col gap-2 items-center text-[20px] text-white/50 cursor-pointer')}
                 onClick={() => swiper.slideTo(idx)}

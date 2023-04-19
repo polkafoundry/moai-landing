@@ -5,6 +5,11 @@ import { ImageCard2 } from "@/uikit/image-card";
 import clsx from "clsx";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './nft-collection.module.scss';
+import { useRouter } from "next/router";
+import { HomeSection } from "../const";
+import { HeightEffect } from "@/uikit/animation/height-effect";
+import { FadeEffect } from "@/uikit/animation/fade-effect";
+import { useScreenActive } from "../ctx";
 
 const collection1 = [
   { name: '#1911', price: '0.019 ETH', thumb: '/assets/nft-1911.png' },
@@ -33,32 +38,37 @@ const collection2 = [
 ]
 
 export function NftCollection() {
+  const show = useScreenActive(HomeSection.NFT_COLLECTION);
+
   return (
     <div className="h-[100vh] backdrop flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div className='container grid grid-cols-2 gap-8 relative z-10'>
         <div>
-          <h1 className='text-[48px] mb-[12px] font-[500]'>NFT Collection</h1>
-          <div className='text-white/80 mb-[40px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et auctor lectus. Curabitur consectetur metus vitae tristique rhoncusc a nisl.</div>
+          <FadeEffect show={show} x={150}><h1 className='text-[48px] mb-[12px] font-[500]'>NFT Collection</h1></FadeEffect>
+          <FadeEffect show={show} x={-100}>
+            <div className='text-white/80 mb-[40px]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et auctor lectus. Curabitur consectetur metus vitae tristique rhoncusc a nisl.</div>
+          </FadeEffect>
+          <FadeEffect show={show} y={50}>
+            <div className='flex flex-col gap-10'>
+              <div className='flex gap-[30px]'>
+                <div><ImageCard2 /></div>
+                <div className='flex flex-col gap-[10px]'>
+                  <div className='text-[24px]'>NFT collectibles</div>
+                  <div className='text-white/50 text-[14px]'>Special NFT collectible for special user to unlock special features</div>
+                  <div><button className='btn-cta px-8 flex gap-2 items-center'><DiscordIcon /> Join private club</button></div>
+                </div>
+              </div>
 
-          <div className='flex flex-col gap-10'>
-            <div className='flex gap-[30px]'>
-              <div><ImageCard2 /></div>
-              <div className='flex flex-col gap-[10px]'>
-                <div className='text-[24px]'>NFT collectibles</div>
-                <div className='text-white/50 text-[14px]'>Special NFT collectible for special user to unlock special features</div>
-                <div><button className='btn-cta px-8 flex gap-2 items-center'><DiscordIcon /> Join private club</button></div>
+              <div className='flex gap-[30px]'>
+                <div><ImageCard2 /></div>
+                <div className='flex flex-col gap-[10px]'>
+                  <div className='text-[24px]'>NFT collectibles</div>
+                  <div className='text-white/50 text-[14px]'>Special NFT collectible for special user to unlock special features</div>
+                  <div><button className='btn-cta px-8 flex gap-2 items-center'><DiscordIcon /> Join private club</button></div>
+                </div>
               </div>
             </div>
-
-            <div className='flex gap-[30px]'>
-              <div><ImageCard2 /></div>
-              <div className='flex flex-col gap-[10px]'>
-                <div className='text-[24px]'>NFT collectibles</div>
-                <div className='text-white/50 text-[14px]'>Special NFT collectible for special user to unlock special features</div>
-                <div><button className='btn-cta px-8 flex gap-2 items-center'><DiscordIcon /> Join private club</button></div>
-              </div>
-            </div>
-          </div>
+          </FadeEffect>
         </div>
 
         <div className="flex flex-col justify-center">
@@ -79,7 +89,7 @@ export function NftCollection() {
                   autoplay={{
                     reverseDirection: true,
                     delay: 2000,
-                    pauseOnMouseEnter: true,
+                    disableOnInteraction: false,
                   }}
                 >
                   {collection1.map((item, idx) => (
@@ -106,7 +116,7 @@ export function NftCollection() {
                   speed={2000}
                   autoplay={{
                     delay: 2000,
-                    pauseOnMouseEnter: true,
+                    disableOnInteraction: false,
                   }}
                 >
                   {collection2.map((item, idx) => (

@@ -1,7 +1,10 @@
+import { FadeEffect } from '@/uikit/animation/fade-effect';
 import { DiscordIcon } from '@/uikit/icons/discord-icon';
 import clsx from 'clsx';
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { HomeSection } from '../const';
+import { useScreenActive } from '../ctx';
 import styles from './evil-club.module.scss';
 
 const creators = [
@@ -17,15 +20,22 @@ const creators = [
 ]
 
 export function EvilClub() {
+  const show = useScreenActive(HomeSection.EVIL_CLUB);
+
   return (
     <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
         <div className='flex justify-between items-center mb-[60px]'>
-          <h1 className='text-[48px] font-[500]'>First Evil Moai creators</h1>
-          <div className='flex gap-4'>
-            <button className='btn-white px-8'>BECOME A MEMBER</button>
-            <button className='btn-cta flex items-center justify-center gap-2 px-8'><DiscordIcon /> JOIN CLUB</button>
-          </div>
+          <FadeEffect y={-50} show={show}>
+            <h1 className='text-[48px] font-[500]'>First Evil Moai creators</h1>
+          </FadeEffect>
+
+          <FadeEffect x={100} show={show}>
+            <div className='flex gap-4'>
+              <button className='btn-white px-8'>BECOME A MEMBER</button>
+              <button className='btn-cta flex items-center justify-center gap-2 px-8'><DiscordIcon /> JOIN CLUB</button>
+            </div>
+          </FadeEffect>
         </div>
 
         <div className='relative'>
@@ -41,6 +51,7 @@ export function EvilClub() {
             spaceBetween={12}
             slidesPerView={6}
             slidesPerGroup={6}
+            grabCursor
             autoplay={{
               delay: 4000,
             }}
@@ -58,7 +69,6 @@ export function EvilClub() {
               </SwiperSlide>
             ))}
           </Swiper>
-
 
           <div id='evil-club-pagination' className='swiper-pagination absolute pt-4 top-[calc(100%+30px)] left-0 w-full h-6 flex items-center gap-[8px] z-50'></div>
         </div>
