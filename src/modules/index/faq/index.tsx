@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
+import styles from './faq.module.scss';
 
 const faq = [
   { question: '1. What is Evil Moai?', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et auctor lectus. Curabitur consectetur metus vitae tristique rhoncus. Nunc a ex nisl. Ut tincidunt sollicitudin massa ut sagittis. Mauris rutrum nulla dui, id vestibulum erat ultrices vitae. Cras eleifend magna cursus sem dapibus, vitae finibus augue convallis. Mauris nec mi maximus, placerat urna id, placerat felis. Nam massa ligula, sollicitudin et malesuada a, aliquam eu ipsum. Aenean ultricies cursus mi.' },
@@ -37,9 +38,8 @@ export function FAQ() {
         <div ref={elRef} className='max-h-[500px] overflow-auto'>
           <div className="pr-[40px] flex flex-col gap-[8px] ">
             {faq.map((item, idx) => (
-              <div key={idx} className={clsx('relative py-[12px] px-[24px] border-[2px] border-white/10 rounded-[8px] transition-all', {
-                'border-white/10': activeIdx !== idx,
-                'border-[#F98306]': activeIdx === idx,
+              <div key={idx} className={clsx('relative py-[12px] px-[24px] rounded-[8px] transition-all', styles['faq-item'], {
+                [styles['faq-item-active']]: activeIdx === idx,
               })}>
                 <div
                   onClick={() => handleActive(idx)}

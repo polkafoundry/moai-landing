@@ -1,0 +1,27 @@
+.faq-item {
+  position: relative;
+  transition: all 0.3s;
+
+  &:after {
+    transition: all 0.3s;
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 2px;
+    background: linear-gradient(90deg, rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.1));
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+}
+
+.faq-item-active:after {
+  background: linear-gradient(90deg, #E71A16, #FC9303);
+}
