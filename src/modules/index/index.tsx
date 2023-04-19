@@ -9,6 +9,7 @@ import { HomeSection, homeSectionArr } from './const';
 import { MoaiToken } from './moai-token';
 import { EvilClub } from './evil-club';
 import { FAQ } from './faq';
+import clsx from 'clsx';
 
 function getSections() {
   return [
@@ -54,7 +55,13 @@ export function Home() {
       <Header />
       <div className='opacity-[0.4] md:opacity-[0.7]'></div>
       <div className='transition-all duration-700'>
-        {sections[activeIdx].content}
+        {sections.map((section, idx) => (
+          <div className={clsx('fixed top-0 right-0 bottom-0 left-0', {
+            'z-10 ': idx === activeIdx
+          })}>
+            {section.content}
+          </div>
+        ))}
       </div>
     </div>
   )
