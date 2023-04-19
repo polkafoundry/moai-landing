@@ -40,6 +40,7 @@ export function EvilClub() {
             className={styles.swiper}
             spaceBetween={12}
             slidesPerView={6}
+            slidesPerGroup={6}
             autoplay={{
               delay: 4000,
             }}
