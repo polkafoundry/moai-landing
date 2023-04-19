@@ -51,13 +51,12 @@ export function Home() {
 
   return (
     <div ref={screenRef} onScroll={e => e.preventDefault()}>
-      {/* <div className='fixed top-0 left-0 text-[50px] text-white z-50'>{activeSection}</div> */}
       <Header />
-      <div className='opacity-[0.4] md:opacity-[0.7]'></div>
+
       <div className='transition-all duration-700'>
         {sections.map((section, idx) => (
-          <div className={clsx('fixed top-0 right-0 bottom-0 left-0', {
-            'z-10 ': idx === activeIdx
+          <div className={clsx('fixed top-0 right-0 bottom-0 left-0 transition-opacity duration-500 opacity-0', {
+            'z-10 opacity-100': idx === activeIdx,
           })}>
             {section.content}
           </div>
