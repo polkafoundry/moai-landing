@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { MainSlider } from './main-slider/main-slider';
+import { MainSlider, mainSliders, sliderThumbs } from './main-slider/main-slider';
 import { NftCollection } from './nft-collection';
 import { StoryTelling } from './story-telling';
 import { OnChainGame } from './on-chain-game';
@@ -10,6 +10,7 @@ import { MoaiToken } from './moai-token';
 import { EvilClub } from './evil-club';
 import { FAQ } from './faq';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 function getSections() {
   return [
@@ -53,13 +54,32 @@ export function Home() {
     <div ref={screenRef} onScroll={e => e.preventDefault()}>
       <Header />
 
-      <div className='transition-all duration-700'>
-        {sections.map((section, idx) => (
-          <div className={clsx('fixed top-0 right-0 bottom-0 left-0 transition-opacity duration-500 opacity-0', {
-            'z-10 opacity-100': idx === activeIdx,
-          })}>
-            {section.content}
-          </div>
+      {sections.map((section, idx) => (
+        <div key={idx} className={clsx('fixed top-0 right-0 bottom-0 left-0 transition-opacity opacity-0', {
+          'z-10 opacity-100': idx === activeIdx,
+        })}>
+          {section.content}
+        </div>
+      ))}
+
+      <div className={clsx('fixed top-0 -mt-[56px] bottom-0 left-[20px] flex flex-col items-center justify-center z-20 gap-[20px] opacity-0 transition-opacity duration-500', {
+        'opacity-100': activeIdx !== 0,
+      })}>
+        {sliderThumbs.map((slider, idx) => (
+          <Link key={idx} href={`/?section=${HomeSection.MAIN}&tribe=${slider.name}`} className='transition-all duration-300 hover:scale-[115%] rounded-full'>
+            <img src={slider.img} className={clsx(
+              'rounded-full h-[60px[ w-[60px] transition-all -ml-[200px] border-[2px] border-transparent hover:border-[#E76F16] ',
+              {
+                'duration-[0.5s]': idx === 0,
+                'duration-[0.6s]': idx === 1,
+                'duration-[0.7s]': idx === 2,
+                'duration-[0.8s]': idx === 3,
+                'duration-[0.9s]': idx === 4,
+                '-ml-[200px]': activeIdx === 0,
+                'ml-0': activeIdx !== 0,
+              })}
+            />
+          </Link>
         ))}
       </div>
     </div>

@@ -3,10 +3,11 @@ import { OpenseaIcon } from '@/uikit/icons/opensea-icon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import clsx from 'clsx';
 import styles from './main-slider.module.scss';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 SwiperClass.use([Navigation]);
 
-const data = [
+export const mainSliders = [
   {
     backgroundImg: '/assets/bg-moai1.png',
     name: 'Aqua', founder: '750 BC', power: 'Tsunami, Ice, Healing', amount: 670,
@@ -39,7 +40,7 @@ const data = [
   },
 ]
 
-const sliderThumbs = [
+export const sliderThumbs = [
   { img: '/assets/aqua.png', name: 'Aqua' },
   { img: '/assets/aaren.png', name: 'Aegle' },
   { img: '/assets/agni.png', name: 'Agni' },
@@ -48,11 +49,12 @@ const sliderThumbs = [
 ]
 
 export function MainSlider() {
+  const router = useRouter();
+  const tribe = router.query.tribe as string;
   const elRef = useRef<HTMLDivElement>(null);
   const slideToRef = useRef<any>();
   const [swiper, setSwiper] = useState<SwiperClass>(null as any);
   const [swiperIndex, setSwiperIndex] = useState(0);
-
 
   useEffect(() => {
     if (!elRef.current) return;
@@ -70,7 +72,14 @@ export function MainSlider() {
       swiper.slideTo(nextIdx);
       }, 200);
     }
-  }, [elRef, swiperIndex, swiper])
+  }, [elRef, swiperIndex, swiper]);
+
+  useLayoutEffect(() => {
+    if (!swiper || !(swiper as any).enabled) return;
+
+    const idx = Math.max(0, sliderThumbs.findIndex(slider => slider.name === tribe) || 0);
+    swiper.slideTo(idx);
+  }, [swiper, tribe]);
 
   return (
     <main ref={elRef}>
@@ -90,7 +99,7 @@ export function MainSlider() {
           prevEl: '.prev-slider',
         }}
       >
-        {data.map((item, idx) => (
+        {mainSliders.map((item, idx) => (
           <SwiperSlide key={idx}>
             <div key={idx} style={{ backgroundImage: `url(${item.backgroundImg})`, backgroundSize: 'cover' }} className='relative h-[calc(100vh)]'>
               <div className={styles['backdrop-right']}></div>
