@@ -57,14 +57,20 @@ export function Home() {
       <Header />
 
       {sections.map((section, idx) => (
-        <div key={idx} className={clsx('fixed top-0 right-0 bottom-0 left-0 transition-opacity duration-1000', {
+        <div key={idx} className={clsx('fixed top-0 right-0 bottom-0 left-0 transition-all duration-1000', {
           'z-10 opacity-100': idx === activeIdx,
+          // 'scale-95': idx !== activeIdx,
+          // 'duration-1000 opacity-95': idx !== activeIdx,
+          // 'invisible': idx !== activeIdx,
+          // 'visible': idx === activeIdx,
+          // 'opacity-100': idx === activeIdx,
+          // 'duration-500 scale-100': idx === activeIdx,
         })}>
           {section.content}
         </div>
       ))}
 
-      <div className={clsx('fixed top-0 -mt-[56px] bottom-0 left-[16px] flex flex-col items-center justify-center z-20 gap-[20px] opacity-0 transition-opacity duration-500', {
+      <div className={clsx('fixed top-0 -mt-[56px] bottom-0 left-[8px] flex flex-col items-center justify-center z-20 gap-[20px] opacity-0 transition-opacity duration-500', {
         'opacity-100': activeIdx !== 0,
       })}>
         {sliderThumbs.map((slider, idx) => (

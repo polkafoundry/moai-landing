@@ -90,19 +90,12 @@ export function MainSlider() {
     <main className='relative' ref={elRef}>
       <Swiper
         onSwiper={setSwiper}
-        modules={[Autoplay, EffectFade]}
+        modules={[EffectFade]}
         onActiveIndexChange={swiper => setSwiperIndex(swiper.activeIndex)}
         spaceBetween={0}
         effect={"fade"}
         slidesPerView={1}
         speed={1500}
-        // autoplay={{
-        //   delay: 5000,
-        // }}
-        navigation={{
-          nextEl: '.next-slider',
-          prevEl: '.prev-slider',
-        }}
       >
         {mainSliders.map((item, idx) => (
           <SwiperSlide key={idx}>
@@ -116,12 +109,14 @@ export function MainSlider() {
               />
 
               <div className='flex h-[100vh] justify-center items-center relative z-10'>
-                <div className='container mx-auto grid grid-cols-12 relative text-white'>
-                  <div className='col-span-8 mb-[100px] flex justify-center'>
-                    <img className='mb-[60px]' src={item.backgroundImgSmall} />
+                <div className='container mx-auto grid grid-cols-12 relative text-white mt-[75px] gap-[40px] lg:gap-[40px]'>
+                  <div className='col-span-6 lg:col-span-7 flex justify-center relative'>
+                    <div className='absolute top-0 right-0 bottom-0 left-0 flex justify-center items-center pb-[120px]'>
+                      <img className='w-full' src={item.backgroundImgSmall} />
+                    </div>
                   </div>
-                  <div className='col-span-4 flex items-start justify-end flex-col gap-[10px] pb-[48px] lg:pb-[96px]'>
-                    <div onWheel={e => e.stopPropagation()} onWheelCapture={e => e.stopPropagation()} className='h-[300px] overflow-y-scroll pr-[30px]'>
+                  <div className='col-span-6 lg:col-span-5  flex items-start justify-end flex-col gap-[10px]'>
+                    <div onWheelCapture={e => e.stopPropagation()} className='h-[300px] overflow-y-scroll pr-[30px]'>
                       <h2 className='text-[48px] font-semibold leading-10 mb-[24px]'>{item.name}</h2>
                       <div className='flex flex-col gap-[10px]'>
                         <div className='flex items-center'><div className='text-white/60 text-[14px] w-[70px]'>FOUNDER</div> <span>{item.founder}</span></div>
@@ -147,15 +142,15 @@ export function MainSlider() {
         ))}
       </Swiper>
 
-      <div className='absolute top-0 left-0 bottom-0 right-0 flex h-[100vh] justify-center items-end z-50 pointer-events-none'>
-        <div className='container mx-auto grid grid-cols-12 relative text-white select-none h-[300px] pointer-events-auto'>
-          <div className='col-span-8 relative'>
-            <div className='flex justify-center gap-[30px] z-50'>
+      <div className='absolute top-0 left-0 bottom-0 right-0 flex h-[100vh] justify-center items-center z-50 pointer-events-none'>
+        <div className='container mx-auto grid grid-cols-12 relative text-white select-none justify-center h-[480px]'>
+          <div className='col-span-6 lg:col-span-7 relative flex justify-center'>
+            <div className='flex justify-center gap-[20px] lg:gap-[30px] z-50 items-end  pointer-events-auto'>
               {sliderThumbs.map((thumb, idx) => (
-                <div key={idx} className={clsx('w-[80px] flex flex-col gap-2 items-center text-[20px] text-white/50 cursor-pointer')}
+                <div key={idx} className={clsx('flex flex-col gap-2 items-center text-[20px] text-white/50 cursor-pointer')}
                   onClick={() => swiper.slideTo(idx)}
                 >
-                  <img src={thumb.img} className={clsx('w-[80px] h-[80px] rounded-full transition-all ease-out duration-300', {
+                  <img src={thumb.img} className={clsx('w-[60px] h-[60px] lg:w-[80px] lg:h-[80px] rounded-full transition-all ease-out duration-300', {
                     'border-[2px] border-orange-500': idx === swiperIndex,
                     'border-[2px] border-transparent': idx !== swiperIndex,
                   })} />
@@ -170,8 +165,18 @@ export function MainSlider() {
       </div>
 
 
-      <div className='z-40 absolute left-0 right-0 bottom-[56px] overflow-hidden w-full object-fill'>
-        <img className='w-full' src='/assets/slogan.png' />
+      <div className='absolute top-0 left-0 bottom-0 right-0 flex h-[100vh] justify-center items-center z-50 pointer-events-none'>
+        <div className='container mx-auto relative h-[400px] '>
+          <div className='flex justify-center h-[400px] absolute left-0 right-0 -top-[70px]'>
+            <div
+              style={{ background: 'url(/assets/slogan-mask.png)' }}
+              className='pointer-events-auto bg-cover bg-no-repeat w-[760px] h-[80px] flex justify-center items-center text-[32px] font-[500]'
+            >
+              First fully on-chain game on zkSync Era.
+            </div>
+            {/* <img className='w-full' src='/assets/slogan.png' /> */}
+          </div>
+        </div>
       </div>
     </main>
   )

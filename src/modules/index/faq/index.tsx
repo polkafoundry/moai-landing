@@ -25,6 +25,10 @@ export function FAQ() {
   const [scroll, setScroll] = useState(false);
 
   useEffect(() => {
+    if (!show) setActiveIdx(0);
+  }, [show])
+
+  useEffect(() => {
     setTimeout(() => {
       setScroll(true);
     }, 3000)
@@ -49,28 +53,38 @@ export function FAQ() {
           'overflow-hidden': !scroll || !show,
           'overflow-auto': scroll && show,
         })}>
-          <div className="pr-[40px] flex flex-col gap-[8px] ">
-            {faq.map((item, idx) => (
-              <FadeEffect key={idx} show={show} x={-idx * 40 + 30}>
-                <div className={clsx('relative py-[12px] px-[24px] rounded-[8px] transition-all', styles['faq-item'], {
-                  [styles['faq-item-active']]: activeIdx === idx,
-                })}>
-                  <div
-                    onClick={() => handleActive(idx)}
-                    className={clsx('font-[500] cursor-pointer transition-all', {
-                      'text-[#F98306]': activeIdx === idx,
-                    })}
-                  >
-                    {item.question}
+          <div className="pr-[40px]">
+            <div className="grid grid-cols-2 gap-[60px]">
+              <div className="w-full flex flex-col gap-[8px]">
+                {faq.map((item, idx) => (
+                  <FadeEffect key={idx} show={show} x={-idx * 40 + 30}>
+                    <div className={clsx('relative py-[12px] px-[24px] rounded-[8px] transition-all', styles['faq-item'], {
+                      [styles['faq-item-active']]: activeIdx === idx,
+                    })}>
+                      <div
+                        onClick={() => handleActive(idx)}
+                        className={clsx('font-[500] cursor-pointer transition-all', {
+                          'text-[#F98306]': activeIdx === idx,
+                        })}
+                      >
+                        {item.question}
+                      </div>
+                    </div>
+                  </FadeEffect>
+                ))}
+              </div>
+              <div className="w-full relative">
+                <div className="sticky top-0 bottom-0">
+                  <div className="flex justify-center items-center h-[450px]">
+                    <div>
+                      <div className='text-highlight text-[24px] font-[500] mb-[12px]'>{faq[activeIdx].question}</div>
+                      <div className={clsx('font-[400] text-white/80', {
+                      })}>{faq[activeIdx].answer}</div>
+                    </div>
                   </div>
-
-                  <div className={clsx('pl-[18px] mt-[4px] transition-all overflow-hidden', {
-                    'h-0': activeIdx !== idx,
-                    'h-auto': activeIdx === idx,
-                  })}>{item.answer}</div>
                 </div>
-              </FadeEffect>
-            ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
