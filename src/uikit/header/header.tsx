@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { HomeSection } from "../const";
+import { HomeSection } from "../../modules/index/const";
 import styles from './header.module.scss';
 
 const navItems = [

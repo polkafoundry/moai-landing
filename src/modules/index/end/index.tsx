@@ -22,7 +22,7 @@ export function End() {
 
           <div className='col-span-8 flex flex-col gap-[26px]'>
             <FadeEffect show={show} y={-100}>
-              <div className='text-[36px] font-[500]'>The future is here, and we're shaping it. Be part of the conversation and stay inspired by our vision.</div>
+              <div className='text-[36px] font-[500]'>The future is here, and we&lsquo;re shaping it. Be part of the conversation and stay inspired by our vision.</div>
             </FadeEffect>
 
             <div className='flex gap-[8px]'>

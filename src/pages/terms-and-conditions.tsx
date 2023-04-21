@@ -1,0 +1,1 @@
+export { TermsAndConditions as default } from '@/modules/terms-and-conditions'

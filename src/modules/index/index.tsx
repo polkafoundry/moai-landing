@@ -3,7 +3,7 @@ import { MainSlider, mainSliders, sliderThumbs } from './main-slider/main-slider
 import { NftCollection } from './nft-collection';
 import { StoryTelling } from './story-telling';
 import { OnChainGame } from './on-chain-game';
-import { Header } from './header';
+import { Header } from '../../uikit/header';
 import { useRouter } from 'next/router';
 import { HomeSection, homeSectionArr } from './const';
 import { MoaiToken } from './moai-token';
@@ -56,8 +56,6 @@ export function Home() {
 
   return (
     <div ref={screenRef} onScroll={e => e.preventDefault()}>
-      <Header />
-
       {sections.map((section, idx) => (
         <div key={idx} className={clsx('fixed top-0 right-0 bottom-0 left-0 transition-all duration-1000', {
           'z-10 opacity-100': idx === activeIdx,
