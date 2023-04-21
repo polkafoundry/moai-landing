@@ -53,6 +53,7 @@ export function StoryTelling() {
                         grabCursor
                         autoplay={{
                           delay: 4000,
+                          disableOnInteraction: false,
                         }}
                       >
                         {mainSliders.map((slider, idx) => (
