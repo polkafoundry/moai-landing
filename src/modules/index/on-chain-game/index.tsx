@@ -72,7 +72,7 @@ export function OnChainGame() {
                   e.stopPropagation();
                   swiper.slideTo(idx)
                 }} className={clsx({
-                  'scale-[2] relative z-50': isPlaying,
+                  'scale-[2] relative z-50': isPlaying && idx === swiperIndex,
                   'scale-[1] relative z-0': isPlaying && idx !== swiperIndex,
                 })}>
                   <div className={clsx('flex flex-col justify-center items-center relative transition-all', {
