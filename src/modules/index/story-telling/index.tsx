@@ -1,28 +1,15 @@
-import { Swiper as SwiperClass, Navigation, Autoplay, Pagination, EffectFade } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FadeEffect } from "@/uikit/animation/fade-effect";
 import { HomeSection } from "../const";
 import { useScreenActive } from "../ctx";
 import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
 import { mainSliders } from "../main-slider/main-slider";
 import styles from './story-telling.module.scss';
 
 export function StoryTelling() {
-  const [scroll, setScroll] = useState(false);
-  const [activeIdx, setActiveIdx] = useState(0);
-  // const elRef = useRef<HTMLDivElement>(null);
   const show = useScreenActive(HomeSection.STORY_TELLING);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setScroll(true);
-  //   }, 3000)
-  //   if (!elRef.current) return;
-  //   elRef.current.onwheel = function (e) {
-  //     e.stopPropagation();
-  //   }
-  // }, []);
   return (
     <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
 
