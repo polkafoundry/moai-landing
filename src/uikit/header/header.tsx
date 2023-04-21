@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Story telling', sec: HomeSection.STORY_TELLING },
   { label: 'NFT Collection', sec: HomeSection.NFT_COLLECTION },
   { label: 'On-chain game', sec: HomeSection.ONCHAIN_GAME },
-  { label: 'Evil club', sec: HomeSection.EVIL_CLUB },
+  { label: 'Moai club', sec: HomeSection.EVIL_CLUB },
   { label: 'Moai token', sec: HomeSection.MOAI_TOKEN },
   { label: 'FAQ', sec: HomeSection.FAQ },
 ]

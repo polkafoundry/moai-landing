@@ -15,13 +15,13 @@ export function MoaiToken() {
         <div className='grid grid-cols-1 lg:grid-cols-8 gap-[80px]'>
           <div className='grid-col-1 lg:col-span-3 w-full text-white/80'>
             <FadeEffect show={show} y={-50}>
-              <h1 className='text-[48px] font-[500] mb-[25px]'>MO Token Utility</h1>
+              <h1 className='text-[48px] font-[500] mb-[25px]'>$MOAI token</h1>
             </FadeEffect>
 
             <div className='flex flex-col gap-[20px] text-white/80 mb-[28px]'>
               <FadeEffect show={show} x={-100}>
-                <div>MO (Evil Moai token) is the token of the Evil Moai ecosystem based on the blockchain. It can be used for adopting Moai, exchanging Moai, participating in games and using advanced functions in the Evil Moai on-chain game world.</div>
-                <div>All players will gather in the community through MO, participate in community governance and get incentives. Players who participate in the game and contribute to the community can obtain MO incentives.</div>
+                <div>$MOAI (Wicked Moai token) is the token of the Wicked Moai ecosystem based on the blockchain. It can be used for adopting Moai, exchanging Moai, participating in games and using advanced functions in the Wicked Moai on-chain game world.</div>
+                <div>All players will gather in the community through $MOAI, participate in community governance and get incentives. Players who participate in the game and contribute to the community can obtain $MOAI incentives.</div>
               </FadeEffect>
               <FadeEffect show={show} x={-200}>
                 <div className="flex gap-4 mt-2">
