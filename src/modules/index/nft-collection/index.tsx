@@ -51,7 +51,7 @@ export function NftCollection() {
           <FadeEffect show={show} y={50}>
             <div className='flex flex-col gap-10'>
               <div className='flex gap-[30px]'>
-                <div><ImageCard2 /></div>
+                <div><ImageCard2 img='/assets/bg-moai1.png' /></div>
                 <div className='flex flex-col gap-[10px]'>
                   <div className='text-[24px]'>NFT collectibles</div>
                   <div className='text-white/50 text-[14px]'>Special NFT collectible for special user to unlock special features</div>
@@ -60,7 +60,7 @@ export function NftCollection() {
               </div>
 
               <div className='flex gap-[30px]'>
-                <div><ImageCard2 /></div>
+                <div><ImageCard2 img='/assets/bg-moai1.png' /></div>
                 <div className='flex flex-col gap-[10px]'>
                   <div className='text-[24px]'>NFT collectibles</div>
                   <div className='text-white/50 text-[14px]'>Special NFT collectible for special user to unlock special features</div>

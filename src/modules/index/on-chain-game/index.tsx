@@ -23,19 +23,19 @@ export function OnChainGame() {
             <div>
               <div className='grid grid-cols-2 gap-x-[30px] gap-y-[40px]'>
                 <div className='flex flex-col items-center gap-2'>
-                  <ImageCard1 />
+                  <ImageCard1 img='/assets/game.png' />
                   <div className='text-[20px] font-[500]'>Moai in wonderland</div>
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <ImageCard1 />
+                  <ImageCard1 img='/assets/game.png' />
                   <div className='text-[20px] font-[500]'>Moai in wonderland</div>
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <ImageCard1 />
+                  <ImageCard1 img='/assets/game.png' />
                   <div className='text-[20px] font-[500]'>Moai in wonderland</div>
                 </div>
                 <div className='flex flex-col items-center gap-2'>
-                  <ImageCard1 />
+                  <ImageCard1 img='/assets/game.png' />
                   <div className='text-[20px] font-[500]'>Moai in wonderland</div>
                 </div>
               </div>
@@ -45,7 +45,7 @@ export function OnChainGame() {
           <div className='flex-1 flex justify-center'>
             <FadeEffect x={50} show={show}>
               <div className='flex flex-col gap-10'>
-                <ImageCard3 imgClass="w-full" />
+                <ImageCard3 img='/assets/bg-moai1.png' imgClass="w-full" />
                 <div className='flex justify-between items-center'>
                   <div className='text-[20px]'>Moai in wonderland</div>
                   <button className='btn-cta px-8 py-2'>Play game</button>

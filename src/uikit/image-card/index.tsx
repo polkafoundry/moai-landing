@@ -1,15 +1,22 @@
 import clsx from "clsx";
 
-export function ImageCard1() {
+type ImageCard1Props = {
+  img: string;
+}
+
+export function ImageCard1({ img }: ImageCard1Props) {
   return (
     <div className='relative my-2'>
       <div className="absolute top-0 right-0 bottom-0 left-0 border-2 border-[#E76F16] rotate-[6deg] rounded-[12px] "></div>
-      <img src='/assets/game.png' className="w-[200px] rounded-[12px] border-2 border-[#E76F16] relative" />
+      <img src={img} className="w-[200px] rounded-[12px] border-2 border-[#E76F16] relative" />
     </div>
   )
 }
 
-export function ImageCard2() {
+type ImageCard2Props = {
+  img: string;
+}
+export function ImageCard2({ img }: ImageCard2Props) {
   return (
     <div className='relative my-2'>
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-[#E71A16] to-[#FC9303] rounded-[12px]">
@@ -18,13 +25,13 @@ export function ImageCard2() {
 
       <div className='relative'>
         <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-[#E71A16] to-[#FC9303] rotate-[6deg] rounded-[12px] "></div>
-        <img src='/assets/bg-moai1.png' className="w-[300px] rounded-[12px] rotate-[6deg] relative p-[2px]" />
+        <img src={img} className="w-[300px] rounded-[12px] rotate-[6deg] relative p-[2px]" />
       </div>
     </div>
   );
 }
 
-export function ImageCard3({ imgClass }: { imgClass?: string }) {
+export function ImageCard3({ imgClass, img }: { imgClass?: string, img: string }) {
   return (
     <div className='relative my-2'>
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-[#E71A16] to-[#FC9303] rounded-[12px] rotate-[4deg]">
@@ -33,7 +40,7 @@ export function ImageCard3({ imgClass }: { imgClass?: string }) {
 
       <div className='relative'>
         <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-r from-[#E71A16] to-[#FC9303] rounded-[12px] "></div>
-        <img src='/assets/bg-moai1.png' className={clsx(imgClass || 'w-[300px]', "rounded-[12px] relative p-[4px]")} />
+        <img src={img} className={clsx(imgClass || 'w-[300px]', "rounded-[12px] relative p-[4px]")} />
       </div>
     </div>
   );
