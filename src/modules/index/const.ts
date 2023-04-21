@@ -6,6 +6,7 @@ export enum HomeSection {
   EVIL_CLUB = 'evil-club',
   MOAI_TOKEN = 'moai-token',
   FAQ = 'faq',
+  END = 'end',
 }
 
 export const homeSectionArr = Object.values(HomeSection);

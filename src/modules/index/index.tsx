@@ -11,6 +11,7 @@ import { EvilClub } from './evil-club';
 import { FAQ } from './faq';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { End } from './end';
 
 function getSections() {
   return [
@@ -21,6 +22,7 @@ function getSections() {
     { content: <EvilClub /> },
     { content: <MoaiToken /> },
     { content: <FAQ /> },
+    { content: <End/> }
   ];
 }
 export function Home() {
@@ -41,7 +43,7 @@ export function Home() {
     if (!screenRef.current) return;
     screenRef.current.onwheel = function (e) {
       function start() {
-        const nextIdx = e.deltaY > 0 ? Math.min(6, activeIdx + 1) : Math.max(0, activeIdx - 1);
+        const nextIdx = e.deltaY > 0 ? Math.min(homeSectionArr.length - 1, activeIdx + 1) : Math.max(0, activeIdx - 1);
         const secKey = homeSectionArr[nextIdx];
         router.push(`/?section=${secKey}`, undefined, { shallow: true })
       }

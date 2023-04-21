@@ -146,3 +146,17 @@ body {
   background-clip: text;
   text-fill-color: transparent;
 }
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: rgb(255 255 255 / 0.2);
+  transition: all 0.5s;
+  &:hover {
+    background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
+  }
+}
