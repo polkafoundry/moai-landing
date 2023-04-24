@@ -1,9 +1,8 @@
+import { DISCORD_URL, TELE_URL, TWITTER_URL } from "@/const/config";
 import { FadeEffect } from "@/uikit/animation/fade-effect";
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
-import { MailIcon } from "@/uikit/icons/mail-icon";
+import { TelegramIcon } from "@/uikit/icons/telegram-icon";
 import { TwitterIcon } from "@/uikit/icons/twitter-icon";
-import { WhitePaperIcon } from "@/uikit/icons/whitepaper-icon";
-import dynamic from 'next/dynamic';
 import Link from "next/link";
 import { HomeSection } from "../const";
 import { useScreenActive } from "../ctx";
@@ -11,7 +10,7 @@ export function End() {
   const show = useScreenActive(HomeSection.END);
 
   return (
-    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
         <div className='grid grid-cols-1 lg:grid-cols-12 gap-[80px] items-center'>
           <div className='col-span-4 text-white/80'>
@@ -27,13 +26,13 @@ export function End() {
 
             <div className='flex gap-[8px]'>
               <FadeEffect show={show} y={15}>
-                <Link className='social-link' href='/'><MailIcon className='text-white' /></Link>
+                <Link className='social-link' href={TELE_URL}><TelegramIcon className='text-white' /></Link>
               </FadeEffect>
               <FadeEffect show={show} y={25}>
-                <Link className='social-link' href='/'><TwitterIcon className='text-white' /></Link>
+                <Link className='social-link' href={TWITTER_URL}><TwitterIcon className='text-white' /></Link>
               </FadeEffect>
               <FadeEffect show={show} y={35}>
-                <Link className='social-link' href='/'><DiscordIcon className='text-white' /></Link>
+                <Link className='social-link' href={DISCORD_URL}><DiscordIcon className='text-white' /></Link>
               </FadeEffect>
             </div>
 

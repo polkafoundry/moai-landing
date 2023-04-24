@@ -8,7 +8,7 @@ export function RoadMap() {
   return (
 
     <div className='backdrop overflow-hidden'>
-      <div className="h-[100vh] py-[60px] lg:py-0 overflow-auto flex items-center justify-center z-10" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+      <div className="h-[100vh] py-[60px] lg:py-0 overflow-auto flex items-center justify-center z-10" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
         <div className='container relative z-10'>
           <FadeEffect show={show} y={-50}><h1 className='text-[48px] font-[500] mb-[10px]'>Moai adventure</h1></FadeEffect>
 

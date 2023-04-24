@@ -8,6 +8,10 @@ import { HomeSection } from "../const";
 import { FadeEffect } from "@/uikit/animation/fade-effect";
 import { useScreenActive } from "../ctx";
 import { OpenseaIcon } from "@/uikit/icons/opensea-icon";
+import Link from "next/link";
+import { ExternalLink } from "@/uikit/external-link";
+import { DISCORD_URL } from "@/const/config";
+import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 
 export const collection1 = [
   { name: '#1911', price: '0.019 ETH', thumb: '/assets/nft-1911.png' },
@@ -40,7 +44,7 @@ export function NftCollection() {
 
   return (
     <div className='backdrop'>
-      <div className="h-screen overflow-hidden overflow-y-auto flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+      <div className="h-screen overflow-hidden overflow-y-auto flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
         <div className='h-full  py-[60px] lg:py-0 lg:h-auto container grid grid-cols-2 gap-8 relative z-10'>
           <div className='col-span-2 lg:col-span-1'>
             <FadeEffect show={show} x={150}><h1 className='text-[48px] mb-[12px] font-[500]'>Wicked Moai NFTs</h1></FadeEffect>
@@ -54,7 +58,11 @@ export function NftCollection() {
                   <div className='flex-1 flex flex-col gap-[10px]'>
                     <div className='text-[24px]'>NFT collectibles</div>
                     <div className='text-white/50 text-[14px] w-full'>Special NFT collectible for special user to unlock special features</div>
-                    <div><button className='btn-cta px-4 text-xs lg:text-md lg:px-4 flex gap-2 items-center justify-center'><DiscordIcon /> Join private club</button></div>
+                    <div>
+                      <ExternalLink href={DISCORD_URL}>
+                        <button className='btn-cta px-4 text-xs lg:text-md lg:px-4 flex gap-2 items-center justify-center'><DiscordIcon /> Join private club</button>
+                      </ExternalLink>
+                    </div>
                   </div>
                 </div>
 
@@ -63,8 +71,10 @@ export function NftCollection() {
                   <div className='flex-1 flex flex-col gap-[10px]'>
                     <div className='text-[24px]'>Consumption NFT</div>
                     <div className='text-white/50 text-[14px] w-full'>Own NFT to navigate Wicked Moai game world and enjoy exciting game play</div>
-                    <div className='flex gap-4 lg:flex-col xl:flex-row'>
-                      <button className='btn-cta px-4 text-xs lg:text-md lg:px-4 flex gap-2 items-center justify-center'>Play game</button>
+                    <div className='flex items-center gap-4 lg:flex-col xl:flex-row'>
+                      <Link href={`/?section=${HomeSection.ONCHAIN_GAME}`} shallow>
+                        <button className='btn-cta px-4 text-xs lg:text-md lg:px-4 flex gap-2 items-center justify-center'><PlayGameIcon/> Play game</button>
+                      </Link>
                       <button className='btn-cta px-4 text-xs lg:text-md lg:px-4 flex gap-2 items-center justify-center'><OpenseaIcon /> Buy now</button>
                     </div>
                   </div>
