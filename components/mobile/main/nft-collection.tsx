@@ -79,7 +79,7 @@ const NftCollection = ({ nftCollectionRef }: any) => {
       >
         <div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-[#0B0515] to-transparent z-10" />
         <div className="absolute bottom-0 left-0 w-full h-[100px] bg-gradient-to-t from-[#0B0515] to-transparent z-10" />
-        <div className="-translate-x-[100px]">
+        <div className="-translate-x-[250px]">
           <Swiper
             modules={[Autoplay]}
             className="swiper-top"
