@@ -11,7 +11,7 @@ import { HeightEffect } from "@/uikit/animation/height-effect";
 import { FadeEffect } from "@/uikit/animation/fade-effect";
 import { useScreenActive } from "../ctx";
 
-const collection1 = [
+export const collection1 = [
   { name: '#1911', price: '0.019 ETH', thumb: '/assets/nft-1911.png' },
   { name: '#1912', price: '0.039 ETH', thumb: '/assets/nft-1912.png' },
   { name: '#1913', price: '0.012 ETH', thumb: '/assets/nft-1913.png' },
@@ -24,7 +24,7 @@ const collection1 = [
   { name: '#1913', price: '0.012 ETH', thumb: '/assets/nft-1913.png' },
 ];
 
-const collection2 = [
+export const collection2 = [
   { name: '#1913', price: '0.012 ETH', thumb: '/assets/nft-1913.png' },
   { name: '#1912', price: '0.039 ETH', thumb: '/assets/nft-1912.png' },
   { name: '#1913', price: '0.012 ETH', thumb: '/assets/nft-1913.png' },
