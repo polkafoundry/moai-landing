@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import useMediaQuery from "../../../components/hooks/media-query";
+import HeaderMobile from "../../../components/mobile/main/header";
 import { HomeSection } from "../../modules/index/const";
 import styles from './header.module.scss';
 
@@ -10,12 +12,18 @@ const navItems = [
   { label: 'On-chain game', sec: HomeSection.ONCHAIN_GAME },
   { label: 'Moai club', sec: HomeSection.EVIL_CLUB },
   { label: 'Moai token', sec: HomeSection.MOAI_TOKEN },
+  { label: 'Road map', sec: HomeSection.ROADMAP },
   { label: 'FAQ', sec: HomeSection.FAQ },
 ]
 
 export function Header() {
   const router = useRouter();
+  const isSmall = useMediaQuery("(max-width: 1280px)");
   const section = router.query.section as HomeSection || HomeSection.MAIN;
+
+  if (isSmall) {
+    return <HeaderMobile />
+  }
 
   return (
     <header className='fixed top-0 right-0 left-0 z-40 select-none'>

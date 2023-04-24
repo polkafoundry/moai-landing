@@ -10,8 +10,8 @@ export function StoryTelling() {
   const show = useScreenActive(HomeSection.STORY_TELLING);
 
   return (
-    <div className=' backdrop'>
-      <div className="h-[100vh] overflow-auto pt-[75px] pb-[50px] flex items-center z-10" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div className='backdrop'>
+      <div className="h-[100vh] py-[60px] lg:py-0 overflow-auto flex items-center z-10" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
 
         <div className='h-full lg:h-auto container relative z-10 bg-transparent'>
           <FadeEffect show={show} y={-50}><h1 className='text-[48px] font-[500] mb-[25px]'>The Legend</h1></FadeEffect>
@@ -31,8 +31,8 @@ export function StoryTelling() {
               <FadeEffect show={show} y={50}>Embark on the mystical journey to unveil Rapa Nui’s ancient apocalypse and embrace the malevolent power of Wicked Moai.</FadeEffect>
             </div>
 
-            <div className="w-full relative">
-              <div className="sticky top-0 bottom-0">
+            <div className="w-full relative pb-4">
+              <div className="sticky top-0 bottom-0 pb-4">
                 <FadeEffect show={show} x={150}>
                   <div className="flex justify-center items-center lg:h-[450px]">
                     <Swiper
@@ -43,7 +43,8 @@ export function StoryTelling() {
                         bulletActiveClass: styles['swiper-pagination-bullet-active'],
                       }}
                       loop
-                      modules={[Pagination, Autoplay]}
+                      initialSlide={3}
+                      // modules={[Pagination, Autoplay]}
                       spaceBetween={20}
                       effect={"fade"}
                       slidesPerView={1}

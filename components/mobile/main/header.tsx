@@ -1,6 +1,7 @@
+import { DISCORD_URL, TELE_URL, TWITTER_URL } from "@/const/config";
 import { HomeSection } from "@/modules/index/const";
+import { ExternalLink } from "@/uikit/external-link";
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
-import { MailIcon } from "@/uikit/icons/mail-icon";
 import { TelegramIcon } from "@/uikit/icons/telegram-icon";
 import { TwitterIcon } from "@/uikit/icons/twitter-icon";
 import clsx from "clsx";
@@ -84,25 +85,24 @@ const HeaderMobile = () => {
             conversation and stay inspired by our vision.
           </p>
           <div className="flex gap-[24px] mt-8 justify-center">
-            <Link
-              href="https://t.me/wickedmoai"
-              target={"_blank"}
+            <ExternalLink
+              href={TELE_URL}
               className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#E71A16] to-[#FC9303]"
             >
               <TelegramIcon className="text-white" width={20} height={20} />
-            </Link>
-            <Link
-              href="/"
+            </ExternalLink>
+            <ExternalLink
+              href={TWITTER_URL}
               className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#E71A16] to-[#FC9303]"
             >
               <TwitterIcon className="text-white" width={20} height={20} />
-            </Link>
-            <Link
-              href="/"
+            </ExternalLink>
+            <ExternalLink
+              href={DISCORD_URL}
               className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#E71A16] to-[#FC9303]"
             >
               <DiscordIcon className="text-white" width={20} height={20} />
-            </Link>
+            </ExternalLink>
           </div>
           <div className="w-full h-[1px] bg-white opacity-20 mt-[60px]" />
           <div className="flex gap-[40px] justify-center py-4">
