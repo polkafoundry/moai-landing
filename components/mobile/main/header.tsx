@@ -1,4 +1,4 @@
-import { DISCORD_URL, TELE_URL, TWITTER_URL } from "@/const/config";
+import { DISCORD_URL, LITEPAPER, TELE_URL, TWITTER_URL } from "@/const/config";
 import { HomeSection } from "@/modules/index/const";
 import { ExternalLink } from "@/uikit/external-link";
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
@@ -49,7 +49,9 @@ const HeaderMobile = () => {
     >
       <div className="container mx-auto h-[60px] px-8 flex justify-between items-center">
         <Link href="/?section=main" shallow>
-          <div className="text-[20px] font-semibold">LOGO</div>
+          <div className="text-[20px] font-semibold">
+            <Image src="/assets/logo.png" width={80} height={37} alt="logo" />
+          </div>
         </Link>
         <Image
           src="/assets/icon-menu.svg"
@@ -78,6 +80,15 @@ const HeaderMobile = () => {
                 {item.label}
               </Link>
             ))}
+            <Link
+              className="transition-all w-fit mx-auto duration-300 px-8 py-[12px] rounded-[4px] text-center bg-white bg-opacity-10"
+              href={LITEPAPER}
+              target={"_blank"}
+              onClick={() => setIsShow(false)}
+              shallow
+            >
+              Whitepaper
+            </Link>
           </div>
 
           <p className="max-w-[334px] mx-auto mt-10 px-5 text-center text-[20px] leading-[24px]">

@@ -2,6 +2,7 @@ import { WhitePaperIcon } from "@/uikit/icons/whitepaper-icon";
 import { ChartMobile } from "./chart";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import { LITEPAPER } from "@/const/config";
 const ChartComponent = dynamic(
   () => import("./chart").then((m) => m.ChartMobile),
   { ssr: false }
@@ -58,12 +59,14 @@ const MoaiToken = ({ moaiTokenRef }: any) => {
         with $MOAI token.
       </p>
       <div className="px-10">
-        <Link href={"https://litepaper.moai3.xyz"} target={"_blank"}>
+        <Link href={LITEPAPER} target={"_blank"}>
           <button className="btn-white w-full mt-5">
             <WhitePaperIcon /> WHITEPAPER
           </button>
         </Link>
-        <button className="btn-cta w-full mt-3">Join DAO</button>
+        <button className="btn-cta w-full mt-3 disabled:opacity-70" disabled>
+          Join DAO
+        </button>
       </div>
       <div>
         <ChartComponent dataMoaiToken={dataMoaiToken} />

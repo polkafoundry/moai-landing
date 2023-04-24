@@ -10,6 +10,8 @@ import { collection1, collection2 } from "@/modules/index/nft-collection";
 import { EthIcon } from "@/uikit/icons/eth-icon";
 import Link from "next/link";
 import { HomeSection } from "@/modules/index/const";
+import { ExternalLink } from "@/uikit/external-link";
+import { DISCORD_URL } from "@/const/config";
 
 const NftCollection = ({ nftCollectionRef }: any) => {
   return (
@@ -31,9 +33,11 @@ const NftCollection = ({ nftCollectionRef }: any) => {
         Special NFT collectible for special user to unlock special features
       </p>
       <div className="mt-5 text-center">
-        <button className="btn-cta px-5 py-[12px] mx-auto flex gap-2 items-center text-[14px] leading-[15px]">
-          <DiscordIcon /> Join private club
-        </button>
+        <ExternalLink href={DISCORD_URL}>
+          <button className="btn-cta px-5 py-[12px] mx-auto flex gap-2 items-center text-[14px] leading-[15px]">
+            <DiscordIcon /> Join private club
+          </button>
+        </ExternalLink>
       </div>
       <Image
         src="/assets/nft-collection.png"
@@ -62,8 +66,9 @@ const NftCollection = ({ nftCollectionRef }: any) => {
         <button
           className={clsx(
             "btn-cta-second",
-            "w-full text-[14px] leading-[15px] py-[12px]"
+            "w-full text-[14px] leading-[15px] py-[12px] disabled:opacity-70"
           )}
+          disabled
         >
           <div className="relative z-10 flex items-center gap-2 justify-center">
             <OpenseaIcon width={15} height={15} /> Buy Now

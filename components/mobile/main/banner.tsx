@@ -124,7 +124,7 @@ const Banner = ({}: Props) => {
                 Play game
               </button>
             </Link>
-            <button className={clsx("btn-cta-second", "w-full mt-2")}>
+            <button className={clsx("btn-cta-second", "w-full mt-2 disabled:opacity-70")} disabled>
               <div className="relative z-10 flex items-center gap-2 justify-center">
                 <OpenseaIcon /> View collectible
               </div>

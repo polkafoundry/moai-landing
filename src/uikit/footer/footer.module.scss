@@ -6,4 +6,8 @@
   height: 32px;
   border-radius: 100%;
   background-color: rgb(255 255 255 / 0.2);
+
+  &:hover {
+    background: linear-gradient(86.03deg, #E71A16 4.07%, #FC9303 79.02%);
+  }
 }

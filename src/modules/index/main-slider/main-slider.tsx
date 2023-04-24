@@ -180,14 +180,24 @@ export function MainSlider() {
                     </div>
 
                     <div className="flex items-center gap-4 w-full mt-[30px]">
-                      <Link className="w-full" href={`/?section=${HomeSection.ONCHAIN_GAME}`} shallow>
+                      <Link
+                        className="w-full"
+                        href={`/?section=${HomeSection.ONCHAIN_GAME}`}
+                        shallow
+                      >
                         <button className="btn-cta w-full text-xs lg:text-md">
-                          <div className="relative z-10 flex items-center gap-2 justify-center">
+                          <div className="relative z-10 flex items-center gap-2 justify-center hover:scale-[1.1] duration-150">
                             <PlayGameIcon /> Play game
                           </div>
                         </button>
                       </Link>
-                      <button className="btn-cta-second w-full text-xs lg:text-md">
+                      <button
+                        className={clsx(
+                          "btn-cta-second w-full text-xs lg:text-md",
+                          "disabled:opacity-80"
+                        )}
+                        disabled
+                      >
                         <div className="relative z-10 flex items-center gap-2 justify-center">
                           <OpenseaIcon /> View collectible
                         </div>

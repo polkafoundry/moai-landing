@@ -12,7 +12,7 @@ const TermsConditionsMobile = () => {
         Terms and Conditions
       </div>
       <div className={"px-5 mt-5"}>
-        <div className="pr-[40px]">
+        <div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px]">
             <div className="w-full flex flex-col gap-[20px] text-white/80">
               <div>

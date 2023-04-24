@@ -5,13 +5,13 @@ import { creators } from "@/modules/index/evil-club";
 import clsx from "clsx";
 import Image from "next/image";
 import { ExternalLink } from "@/uikit/external-link";
-import { DISCORD_URL } from "@/const/config";
+import { BECOME_MEMBERS_URL, DISCORD_URL } from "@/const/config";
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
 
 const MoaiCreator = ({ moaiCreatorRef }: any) => {
   return (
     <div className="pt-[60px]" ref={moaiCreatorRef}>
-      <div className="text-[32px] leading-[38px] text-center font-[500]">
+      <div className="text-[32px] leading-[38px] text-center font-[500] px-5">
         First Wicked Moai creators
       </div>
       <div className="overflow-hidden mt-10 pl-8 h-fit">
@@ -61,7 +61,9 @@ const MoaiCreator = ({ moaiCreatorRef }: any) => {
         />
       </div>
       <div className="px-10 mt-8">
-        <button className="btn-white w-full px-8">BECOME A MEMBER</button>
+        <ExternalLink href={BECOME_MEMBERS_URL}>
+          <button className="btn-white w-full px-8">BECOME A MEMBER</button>
+        </ExternalLink>
         <ExternalLink href={DISCORD_URL}>
           <button className="btn-cta w-full flex mt-3 items-center justify-center gap-2 px-8">
             <DiscordIcon /> JOIN CLUB
