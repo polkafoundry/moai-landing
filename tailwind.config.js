@@ -18,11 +18,18 @@ module.exports = {
     },
     container: {
       center: true,
-      padding: '1rem',
+      padding: {
+        DEFAULT: '1rem',
+        xs: '1rem',
+        sm: '1rem',
+        lg: '4rem',
+        xl: '4rem',
+        '2xl': '4rem',
+      },
       screens: {
         sm: '100%',
         md: '100%',
-        lg: '100%',
+        lg: '1024px',
         xl: '1280px',
       },
     },
