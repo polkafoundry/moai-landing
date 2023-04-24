@@ -25,7 +25,7 @@ export const dataMoaiToken = [
     color: "#f7ff04",
   },
   {
-    country: "ANGLE SALE",
+    country: "ANGEL SALE",
     litres: 10,
     color: "#a7d90d",
   },
