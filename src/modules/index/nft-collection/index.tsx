@@ -68,7 +68,7 @@ export function NftCollection() {
               <div className="flex flex-col gap-10">
                 <div className="flex flex-col md:flex-row gap-[12px] md:gap-[30px]">
                   <div className="w-[190px]">
-                    <img src="/assets/nft-collection.png" />
+                    <img src="/assets/nft-collection2.png" />
                   </div>
                   <div className="flex-1 flex flex-col gap-[10px]">
                     <div className="text-[24px]">NFT collectibles</div>

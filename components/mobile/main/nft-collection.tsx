@@ -20,7 +20,7 @@ const NftCollection = ({ nftCollectionRef }: any) => {
         Wicked Moai NFTs
       </div>
       <Image
-        src="/assets/nft-collection.png"
+        src="/assets/nft-collection2.png"
         className="mx-auto mt-5"
         width={270}
         height={174}
