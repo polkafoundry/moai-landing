@@ -1,6 +1,6 @@
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
 import { Autoplay } from "swiper";
-import { EthIcon } from "@/uikit/icons/eth-icon";
+// import { EthIcon } from "@/uikit/icons/eth-icon";
 import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./nft-collection.module.scss";
@@ -168,9 +168,9 @@ export function NftCollection() {
                           <img src={item.thumb} className="rounded-[12px]" />
                           <div className="flex justify-between items-center">
                             <div className="lg:text-md">{item.name}</div>
-                            <div className="flex items-center gap-1 text-md">
+                            {/* <div className="flex items-center gap-1 text-md">
                               <EthIcon /> {item.price}
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </SwiperSlide>
@@ -211,9 +211,9 @@ export function NftCollection() {
                           <img src={item.thumb} className="rounded-[12px]" />
                           <div className="flex justify-between items-center">
                             <div>{item.name}</div>
-                            <div className="flex items-center gap-1">
+                            {/* <div className="flex items-center gap-1">
                               <EthIcon /> {item.price}
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </SwiperSlide>
