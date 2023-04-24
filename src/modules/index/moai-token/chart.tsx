@@ -11,7 +11,7 @@ import { HomeSection } from "../const";
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_dataviz);
 
-export function Chart() {
+export function Chart({ dataMoaiToken }: { dataMoaiToken: any }) {
   const chart = useRef<any>(null);
 
   useLayoutEffect(() => {
@@ -19,43 +19,7 @@ export function Chart() {
 
     x.paddingRight = 20;
 
-    let data = [
-      {
-        "country": "ECOSYSTEM GROWTH",
-        "litres": 50,
-        color: '#ff1100',
-      },
-      {
-        "country": "TREASURY",
-        "litres": 3,
-        color: '#ff5b00',
-      },
-      {
-        "country": "PUBLIC SALE",
-        "litres": 7,
-        color: '#ff9404',
-      },
-      {
-        "country": "LIQUIDTY & LISTING",
-        "litres": 10,
-        color: '#fccc06',
-      },
-      {
-        "country": "MARKETING",
-        "litres": 10,
-        color: '#f7ff04',
-      },
-      {
-        "country": "ANGLE SALE",
-        "litres": 10,
-        color: '#a7d90d',
-      },
-      {
-        "country": "TEAM",
-        "litres": 10,
-        color: '#08cc15',
-      },
-    ];
+    let data = dataMoaiToken;
 
     x.data = data;
     // let visits = 10;
@@ -91,7 +55,7 @@ export function Chart() {
     pieSeries.dataFields.value = "litres";
     pieSeries.dataFields.category = "country";
     pieSeries.slices.template.propertyFields.fill = "color";
-    // pieSeries.radius = 200;
+    pieSeries.radius = 180;
 
     // pieSeries.labels.template.htmlContainer = <div></div>
     // pieSeries.labels.template.html = "<div class='label-wrapper text-white flex leading-5 flex-col border border-white rounded-[8px] p-[8px]'><div class='label'>{category}</div><div>{value.value}</div></div>";
@@ -102,23 +66,25 @@ export function Chart() {
 
     // pieSeries.labels.template.padding(12, 0, 0, 0);
     // pieSeries.ticks.template.fill = am4core.color("#fff");
-    
+
     pieSeries.hiddenState.properties.endAngle = -90;
 
     (x as any)?._logo?.dispose();
     // https://www.amcharts.com/docs/v4/tutorials/one-pulled-slice-per-pie-chart/
-    pieSeries.slices.template.events.on("hit", function(ev: any) {
+    pieSeries.slices.template.events.on("hit", function (ev: any) {
       let series = ev.target.dataItem.component;
-      series.slices.each(function(item: any) {
-        
+      series.slices.each(function (item: any) {
+
         item.isActive = false;
       })
     });
+
+    pieSeries.labels.template.text = "";
     // let gradient = new am4core.LinearGradient();gradient.addColor(am4core.color("red"));
     // gradient.addColor(am4core.color("#FF1100"));
     // gradient.addColor(am4core.color("#FC7B03"));
     // pieSeries.labels.template.fill = gradient;//am4core.color("white");
-    
+
 
     // pieSeries.slices.template.cornerRadius = 12;
     // pieSeries.slices.template.stroke = am4core.color("#4a2abb");
@@ -139,6 +105,6 @@ export function Chart() {
   }, []);
 
   return (
-    <div className={styles.chart} id="chartdiv" style={{ width: "100%", height: '100%', minHeight:'400px' }}> </div>
+    <div className={styles.chart} id="chartdiv" style={{ width: "100%", height: '100%', minHeight: '400px' }}> </div>
   );
 }
