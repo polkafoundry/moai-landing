@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { HomeSection } from "@/modules/index/const";
 import {
   mainSliders,
@@ -38,9 +37,12 @@ const Banner = ({}: Props) => {
 
         <div className="col-span-6 lg:col-span-7 flex justify-center relative">
           <div className="flex justify-center items-center">
-            <img
+            <Image
               className="w-full h-[55vw] mx-auto"
+              width={390}
+              height={55}
               src={mainSliders[swiperIndex]?.backgroundImgSmall}
+              priority
               alt="backgroundSmall"
             />
           </div>
@@ -65,6 +67,7 @@ const Banner = ({}: Props) => {
                 )}
                 width={60}
                 height={60}
+                priority
                 alt="thumb"
               />
               <div className={clsx("transition-all ease-out duration-300")}>
