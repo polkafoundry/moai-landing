@@ -1,6 +1,6 @@
 export const dataMoaiToken = [
   {
-    country: "ECOSYSTEM GROWTH",
+    country: "Ecosystem Growth",
     litres: 50,
     color: "#ff1100",
   },
@@ -10,27 +10,27 @@ export const dataMoaiToken = [
     color: "#ff5b00",
   },
   {
-    country: "PUBLIC SALE",
+    country: "Public Sale",
     litres: 2,
     color: "#ff9404",
   },
   {
-    country: "LIQUIDTY & LISTING",
+    country: "Liquidity & Listing",
     litres: 3,
     color: "#fccc06",
   },
   {
-    country: "MARKETING",
+    country: "Marketing",
     litres: 10,
     color: "#f7ff04",
   },
   {
-    country: "ANGEL SALE",
+    country: "Angel Sale",
     litres: 10,
     color: "#a7d90d",
   },
   {
-    country: "TEAM",
+    country: "Team",
     litres: 15,
     color: "#08cc15",
   },

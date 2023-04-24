@@ -71,7 +71,7 @@ export function MoaiToken() {
                       return (
                         <div
                           key={index}
-                          className="flex justify-between text-[16px] uppercase"
+                          className="flex justify-between text-[16px]"
                         >
                           <div style={{ color: data?.color }}>
                             {data?.country}
