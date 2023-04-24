@@ -11,18 +11,11 @@ import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 import { PlayIcon } from "@/uikit/icons/play-icon";
 
 const games = [
-  { name: 'Game 1', banner: '/assets/bg-moai1.png' },
-  { name: 'Game 2', banner: '/assets/bg-moai2.png' },
-  { name: 'Game 3', banner: '/assets/bg-moai3.png' },
-  { name: 'Game 5', banner: '/assets/bg-moai5.png' },
-  { name: 'Game 1', banner: '/assets/bg-moai1.png' },
-  { name: 'Game 2', banner: '/assets/bg-moai2.png' },
-  { name: 'Game 3', banner: '/assets/bg-moai3.png' },
-  { name: 'Game 5', banner: '/assets/bg-moai5.png' },
-  { name: 'Game 1', banner: '/assets/bg-moai1.png' },
-  { name: 'Game 2', banner: '/assets/bg-moai2.png' },
-  { name: 'Game 3', banner: '/assets/bg-moai3.png' },
-  { name: 'Game 5', banner: '/assets/bg-moai5.png' },
+  { name: 'Aqua: Depths of Water', banner: '/assets/bg-moai2.png' },
+  { name: 'Adina: Tempest of Air', banner: '/assets/bg-moai1.png' },
+  { name: 'Agni: Inferno of Fire', banner: '/assets/bg-moai3.png' },
+  { name: 'Aegle: Radiance of Light', banner: '/assets/bg-moai4.png' },
+  { name: 'Aaren: Echoes of Earth', banner: '/assets/bg-moai5.png' },
 ]
 
 export function OnChainGame() {
@@ -57,7 +50,7 @@ export function OnChainGame() {
   }, [swiper]);
 
   return (
-    <div onClick={() => setPlaying(false)} className="h-[100vh] backdrop flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div onClick={() => setPlaying(false)} className="h-[100vh] backdrop flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
       <div>
         <div className="container relative z-10 mb-[90px]">
           {/* <FadeEffect y={-50} show={show}> */}
@@ -119,7 +112,7 @@ export function OnChainGame() {
                       <div
                         onClick={handlePlay}
                         className={clsx(
-                          'absolute top-0 right-0 left-0 bottom-0 text-[48px] font-[500]',
+                          'absolute top-0 right-0 left-0 bottom-0 text-[30px] font-[500]',
                           'flex flex-col justify-center items-center gap-8px] mb-10 z-10',
                           { 'hidden': swiperIndex !== idx }
                         )}

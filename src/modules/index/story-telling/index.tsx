@@ -11,7 +11,7 @@ export function StoryTelling() {
 
   return (
     <div className='backdrop'>
-      <div className="h-[100vh] py-[60px] lg:py-0 overflow-auto flex items-center z-10" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+      <div className="h-[100vh] py-[60px] lg:py-0 overflow-auto flex items-center z-10" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
 
         <div className='h-full lg:h-auto container relative z-10 bg-transparent'>
           <FadeEffect show={show} y={-50}><h1 className='text-[48px] font-[500] mb-[25px]'>The Legend</h1></FadeEffect>

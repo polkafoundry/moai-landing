@@ -10,6 +10,9 @@ import clsx from "clsx";
 import styles from "./main-slider.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
+import { HomeSection } from "../const";
+import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 SwiperClass.use([Navigation]);
 
 export const mainSliders = [
@@ -44,8 +47,8 @@ export const mainSliders = [
     desc: "The Agni tribe representing Fire was a peaceful yet occasionally arrogant group of enablers who have the connection so powerful that they can create energy blasts, perform animal creation and shifting, and they possess invulnerability. ",
   },
   {
-    backgroundImg: "/assets/bg-moai1.png",
-    backgroundImgSmall: "/assets/bg-moai1-small.png",
+    backgroundImg: "/assets/bg-moai4.png",
+    backgroundImgSmall: "/assets/bg-moai4-small.png",
     name: "Aegle/Light",
     founder: "920 BC",
     power: "Electricity, Barrier Creation, Mind-reading",
@@ -176,10 +179,14 @@ export function MainSlider() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 w-full mt-[30px]">
-                      <button className="btn-cta w-full text-xs lg:text-md">
-                        Play game
-                      </button>
+                    <div className="flex items-center gap-4 w-full mt-[30px]">
+                      <Link className="w-full" href={`/?section=${HomeSection.ONCHAIN_GAME}`} shallow>
+                        <button className="btn-cta w-full text-xs lg:text-md">
+                          <div className="relative z-10 flex items-center gap-2 justify-center">
+                            <PlayGameIcon /> Play game
+                          </div>
+                        </button>
+                      </Link>
                       <button className="btn-cta-second w-full text-xs lg:text-md">
                         <div className="relative z-10 flex items-center gap-2 justify-center">
                           <OpenseaIcon /> View collectible

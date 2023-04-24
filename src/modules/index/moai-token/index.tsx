@@ -10,7 +10,7 @@ export function MoaiToken() {
   const show = useScreenActive(HomeSection.MOAI_TOKEN);
 
   return (
-    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
         <div className='grid grid-cols-1 lg:grid-cols-8 gap-[80px]'>
           <div className='grid-col-1 lg:col-span-3 w-full text-white/80'>

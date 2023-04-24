@@ -25,7 +25,7 @@ export function EvilClub() {
   const show = useScreenActive(HomeSection.EVIL_CLUB);
 
   return (
-    <div className="h-[100vh] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div className="h-[100vh] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
         <div className='flex justify-between items-center mb-[60px]'>
           <FadeEffect y={-50} show={show}>

@@ -133,7 +133,7 @@ export function FAQ() {
     <div
       className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center"
       style={{
-        backgroundImage: `url(/assets/bg-moai1.png)`,
+        backgroundImage: `url(/assets/bg-moai.png)`,
         backgroundSize: "cover",
       }}
     >
