@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Story telling", sec: HomeSection.STORY_TELLING },
+  { label: "Storytelling", sec: HomeSection.STORY_TELLING },
   { label: "NFT Collection", sec: HomeSection.NFT_COLLECTION },
   { label: "On-chain game", sec: HomeSection.ONCHAIN_GAME },
   { label: "Moai club", sec: HomeSection.EVIL_CLUB },

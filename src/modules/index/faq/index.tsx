@@ -109,21 +109,23 @@ export function FAQ() {
   const show = useScreenActive(HomeSection.FAQ);
   const elRef = useRef<HTMLDivElement>(null);
   const [activeIdx, setActiveIdx] = useState(0);
-  const [scroll, setScroll] = useState(false);
+  const [ignoreScroll, setIgnoreScroll] = useState(true);
 
   useEffect(() => {
     if (!show) setActiveIdx(0);
+    setIgnoreScroll(true);
   }, [show]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setScroll(true);
-    }, 3000);
     if (!elRef.current) return;
     elRef.current.onwheel = function (e) {
+      if (ignoreScroll) {
+        e.preventDefault();
+        return;
+      };
       e.stopPropagation();
     };
-  }, []);
+  }, [ignoreScroll]);
 
   const handleActive = (idx: number) => {
     setActiveIdx(idx);
@@ -146,9 +148,9 @@ export function FAQ() {
 
         <div
           ref={elRef}
+          onClick={() => setIgnoreScroll(false)}
           className={clsx("max-h-[500px]", {
-            "overflow-hidden": !scroll || !show,
-            "overflow-auto": scroll && show,
+            "overflow-auto": show,
           })}
         >
           <div className="pr-[40px]">

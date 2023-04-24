@@ -38,7 +38,7 @@ export function End() {
 
             <div className='flex gap-8'>
               <FadeEffect show={show} x={-15}>
-                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.STORY_TELLING}`}>Story telling</Link>
+                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.STORY_TELLING}`}>Storytelling</Link>
               </FadeEffect>
 
               <FadeEffect show={show} x={-35}>

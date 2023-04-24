@@ -9,7 +9,7 @@ import Image from "next/image";
 import { LITEPAPER } from "@/const/config";
 
 const navItems = [
-  { label: "Story telling", sec: HomeSection.STORY_TELLING },
+  { label: "Storytelling", sec: HomeSection.STORY_TELLING },
   { label: "NFT Collection", sec: HomeSection.NFT_COLLECTION },
   { label: "On-chain game", sec: HomeSection.ONCHAIN_GAME },
   { label: "Moai club", sec: HomeSection.EVIL_CLUB },
