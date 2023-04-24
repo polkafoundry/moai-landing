@@ -15,7 +15,7 @@ const navItems = [
   { label: "Moai club", sec: HomeSection.EVIL_CLUB },
   { label: "$Moai", sec: HomeSection.MOAI_TOKEN },
   { label: "Road map", sec: HomeSection.ROADMAP },
-  { label: "LitePaper", sec: "" },
+  { label: "Litepaper", sec: "" },
   { label: "FAQ", sec: HomeSection.FAQ },
 ];
 
