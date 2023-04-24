@@ -141,9 +141,13 @@ export function OnChainGame() {
                     </div>
 
                     {swiperIndex === idx && !isPlaying && (
-                      <div className="absolute top-[calc(100%-56px)]">
-                        <button onClick={handlePlay} className="btn-cta px-8 overflow-hidden">
-                          <div className="flex gap-2 items-center hover:scale-[1.1] duration-150">
+                      <div className="absolute top-[calc(100%-56px)] bg-black">
+                        <button
+                          onClick={handlePlay}
+                          className="btn-cta px-8 overflow-hidden disabled:opacity-60"
+                          disabled
+                        >
+                          <div className="flex gap-2 items-center">
                             <PlayGameIcon className="text-white" /> Play game
                           </div>
                         </button>

@@ -11,12 +11,13 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  { label: "Story telling", sec: HomeSection.STORY_TELLING },
+  { label: "Storytelling", sec: HomeSection.STORY_TELLING },
   { label: "NFT Collection", sec: HomeSection.NFT_COLLECTION },
   { label: "On-chain game", sec: HomeSection.ONCHAIN_GAME },
   { label: "Moai club", sec: HomeSection.EVIL_CLUB },
-  { label: "Moai token", sec: HomeSection.MOAI_TOKEN },
+  { label: "$Moai", sec: HomeSection.MOAI_TOKEN },
   { label: "Road map", sec: HomeSection.ROADMAP },
+  { label: "LitePaper", sec: "" },
   { label: "FAQ", sec: HomeSection.FAQ },
 ];
 
@@ -73,22 +74,14 @@ const HeaderMobile = () => {
                     ? "bg-[#F0500E] bg-opacity-80"
                     : "bg-white bg-opacity-10"
                 )}
-                href={`/?section=${item.sec}`}
+                href={item?.sec ? `/?section=${item.sec}` : LITEPAPER}
+                target={item?.sec ? "" : "_blank"}
                 onClick={() => setIsShow(false)}
                 shallow
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              className="transition-all w-fit mx-auto duration-300 px-8 py-[12px] rounded-[4px] text-center bg-white bg-opacity-10"
-              href={LITEPAPER}
-              target={"_blank"}
-              onClick={() => setIsShow(false)}
-              shallow
-            >
-              Whitepaper
-            </Link>
           </div>
 
           <p className="max-w-[334px] mx-auto mt-10 px-5 text-center text-[20px] leading-[24px]">

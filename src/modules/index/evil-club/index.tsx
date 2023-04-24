@@ -144,9 +144,9 @@ export function EvilClub() {
                       {creator.name}
                     </div>
                     <div className="">{creator.title}</div>
-                    <div className="text-[14px] text-white/50">
+                    {/* <div className="text-[14px] text-white/50">
                       {creator.summary}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </SwiperSlide>

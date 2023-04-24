@@ -9,12 +9,13 @@ import Image from "next/image";
 import { LITEPAPER } from "@/const/config";
 
 const navItems = [
-  { label: "Story telling", sec: HomeSection.STORY_TELLING },
+  { label: "Storytelling", sec: HomeSection.STORY_TELLING },
   { label: "NFT Collection", sec: HomeSection.NFT_COLLECTION },
   { label: "On-chain game", sec: HomeSection.ONCHAIN_GAME },
   { label: "Moai club", sec: HomeSection.EVIL_CLUB },
-  { label: "Moai token", sec: HomeSection.MOAI_TOKEN },
+  { label: "$Moai", sec: HomeSection.MOAI_TOKEN },
   { label: "Road map", sec: HomeSection.ROADMAP },
+  { label: "LitePaper", sec: "" },
   { label: "FAQ", sec: HomeSection.FAQ },
 ];
 
@@ -45,20 +46,13 @@ export function Header() {
                   [styles.active]: section === item.sec,
                 }
               )}
-              href={`/?section=${item.sec}`}
+              href={item?.sec ? `/?section=${item.sec}` : LITEPAPER}
+              target={item?.sec ? "" : "_blank"}
               shallow
             >
               {item.label}
             </Link>
           ))}
-          <Link
-            className={clsx(styles["nav-item"], "transition-all duration-300")}
-            href={LITEPAPER}
-            target={"_blank"}
-            shallow
-          >
-            Whitepaper
-          </Link>
         </div>
       </div>
     </header>

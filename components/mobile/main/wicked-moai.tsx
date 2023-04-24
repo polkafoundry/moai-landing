@@ -54,9 +54,14 @@ const VideoGameplay = ({ className, url, preview }: GameplayProps) => {
             />
           </div>
         )}
-        <button className="absolute bottom-[-13px] left-1/2 z-30 w-[200px] -translate-x-1/2 btn-cta flex gap-2 items-center justify-center">
-          <PlayGameIcon className="text-white" /> Play game
-        </button>
+        <div className="absolute bottom-[-13px] left-1/2 z-30 w-[200px] -translate-x-1/2 bg-black">
+          <button
+            className="btn-cta w-full flex gap-2 items-center justify-center disabled:opacity-70"
+            disabled
+          >
+            <PlayGameIcon className="text-white" /> Play game
+          </button>
+        </div>
       </div>
     </div>
   );
