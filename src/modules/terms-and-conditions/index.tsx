@@ -1,6 +1,7 @@
-import { MOAI_EMAIL } from "@/const/config";
 import useMediaQuery from "../../../components/hooks/media-query";
 import TermsConditionsMobile from "./terms-conditions-mobile";
+import { DISCORD_URL, MOAI_EMAIL, TELE_URL, TWITTER_URL } from "@/const/config";
+import { ExternalLink } from "@/uikit/external-link";
 
 export function TermsAndConditions() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -419,39 +420,17 @@ export function TermsAndConditions() {
                 </div>
 
                 <div>
-                  <div className="text-[24px] my-[8px] text-white">
-                    11. Force Majeure
-                  </div>
-                  <ul className="list-disc list-inside">
-                    <li>
-                      Severability: If a provision of this Agreement is or
-                      becomes illegal, invalid, or unenforceable in any
-                      jurisdiction, that shall not affect the validity or
-                      enforceability in that jurisdiction of any other provision
-                      hereof or the validity or enforceability in other
-                      jurisdictions of that or any other provision hereof.
-                    </li>
-                    <li>
-                      Assignment: Wicked Moai reserves the right to assign this
-                      Agreement, in whole or in part, at any time without
-                      notice. The User may not assign any of his/her rights or
-                      obligations under this Agreement.
-                    </li>
-                    <li>
-                      Third-Party Rights: Unless expressly provided to the
-                      contrary in this Agreement, a person who is not a party to
-                      this Agreement has no right to enforce or to enjoy the
-                      benefit of any term of this Agreement. Notwithstanding any
-                      term of this Agreement, no consent of any party who is not
-                      a party to this Agreement shall be required for the
-                      waiver, variation, or termination of any part of this
-                      Agreement.
-                    </li>
-                    <li>
-                      Support and Notice: All notices, requests, demands, and
-                      determinations for Wicked Moai under these Terms (other
-                      than routine operational communications) shall be sent to{" "}
-                      {MOAI_EMAIL}.
+                  <div className='text-[24px] my-[8px] text-white'>11. Force Majeure</div>
+                  <ul className='list-disc list-inside'>
+                    <li>Severability: If a provision of this Agreement is or becomes illegal, invalid, or unenforceable in any jurisdiction, that shall not affect the validity or enforceability in that jurisdiction of any other provision hereof or the validity or enforceability in other jurisdictions of that or any other provision hereof.</li>
+                    <li>Assignment: Wicked Moai reserves the right to assign this Agreement, in whole or in part, at any time without notice. The User may not assign any of his/her rights or obligations under this Agreement.</li>
+                    <li>Third-Party Rights: Unless expressly provided to the contrary in this Agreement, a person who is not a party to this Agreement has no right to enforce or to enjoy the benefit of any term of this Agreement. Notwithstanding any term of this Agreement, no consent of any party who is not a party to this Agreement shall be required for the waiver, variation, or termination of any part of this Agreement.</li>
+                    <li>Support and Notice: All notices, requests, demands, and determinations for Wicked Moai under these Terms (other than routine operational communications) shall be sent to our official accounts:
+                      <ul className='list-disc list-inside pl-4'>
+                        <li>Twitter: <ExternalLink className='text-[var(--m-clr-text-orange)]' href={TWITTER_URL}>{TWITTER_URL}</ExternalLink></li>
+                        <li>Discord: <ExternalLink className='text-[var(--m-clr-text-orange)]' href={DISCORD_URL}>{DISCORD_URL}</ExternalLink></li>
+                        <li>Telegram channel: <ExternalLink className='text-[var(--m-clr-text-orange)]' href={TELE_URL}>{TELE_URL}</ExternalLink></li>
+                      </ul>
                     </li>
                   </ul>
                 </div>

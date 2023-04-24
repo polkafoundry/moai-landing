@@ -118,20 +118,19 @@ export function MainSlider() {
                   <div className='col-span-6 lg:col-span-5  flex items-start justify-end flex-col gap-[10px]'>
                     <div onWheelCapture={e => e.stopPropagation()} className='h-[300px] overflow-y-scroll pr-[30px]'>
                       <h2 className='text-[48px] font-semibold leading-10 mb-[24px]'>{item.name}</h2>
-                      <div className='flex flex-col gap-[10px]'>
-                        <div className='flex items-center'><div className='text-white/60 text-[14px] w-[70px]'>FOUNDER</div> <span>{item.founder}</span></div>
-                        <div className='flex items-center'><span className='text-white/60 text-[14px] w-[70px]'>POWER</span> <span>{item.power}</span></div>
-                        <div className='flex items-center'><span className='text-white/60 text-[14px] w-[70px]'>AMOUNT</span> <span>{item.amount}</span></div>
-                        <div className='flex items-center'><span className='text-white/60 text-[14px] w-[70px]'>TRAITS</span> <span>{item.traits.join(', ')}</span></div>
-                        <div className='text-white/80'>{item.desc}</div>
+                      <div className='grid grid-cols-4 gap-[10px]'>
+                        <div className='text-white/60 text-[14px] w-[70px]'>FOUNDER</div> <span className='col-span-3'>{item.founder}</span>
+                        <span className='text-white/60 text-[14px] w-[70px]'>POWER</span> <span className='col-span-3'>{item.power}</span>
+                        <span className='text-white/60 text-[14px] w-[70px]'>AMOUNT</span> <span className='col-span-3'>{item.amount}</span>
+                        <span className='text-white/60 text-[14px] w-[70px]'>TRAITS</span> <span className='col-span-3'>{item.traits.join(', ')}</span>
+                        <div className='text-white/80 col-span-4'>{item.desc}</div>
                       </div>
                     </div>
 
                     <div className='grid grid-cols-2 gap-4 w-full mt-[30px]'>
-                      <button className={clsx('btn-cta', 'w-full')}>Play game</button>
-                      <button className={clsx('btn-cta-second', 'w-full')}>
+                      <button className='btn-cta w-full text-xs lg:text-md'>Play game</button>
+                      <button className='btn-cta-second w-full text-xs lg:text-md'>
                         <div className='relative z-10 flex items-center gap-2 justify-center'><OpenseaIcon /> View collectible</div>
-
                       </button>
                     </div>
                   </div>
@@ -154,7 +153,7 @@ export function MainSlider() {
                     'border-[2px] border-orange-500': idx === swiperIndex,
                     'border-[2px] border-transparent': idx !== swiperIndex,
                   })} />
-                  <div className={clsx('transition-all ease-out duration-300', {
+                  <div className={clsx('transition-all ease-out duration-300 text-sm lg:text-md', {
                     'text-white': idx === swiperIndex,
                   })}>{thumb.name}</div>
                 </div>
@@ -163,7 +162,6 @@ export function MainSlider() {
           </div>
         </div>
       </div>
-
 
       <div className='absolute top-0 left-0 bottom-0 right-0 flex h-[100vh] justify-center items-center z-50 pointer-events-none'>
         <div className='container mx-auto relative h-[400px] '>

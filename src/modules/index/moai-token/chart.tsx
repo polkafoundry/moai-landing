@@ -90,17 +90,18 @@ export function Chart() {
     var pieSeries = x.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "litres";
     pieSeries.dataFields.category = "country";
+    pieSeries.slices.template.propertyFields.fill = "color";
     // pieSeries.radius = 200;
 
     // pieSeries.labels.template.htmlContainer = <div></div>
-    pieSeries.labels.template.html = "<div class='label-wrapper text-white flex leading-5 flex-col border border-white rounded-[8px] p-[8px]'><div class='label'>{category}</div><div>{value.value}</div></div>";
-    // pieSeries.labels.template.text = ''
-    // pieSeries.labels.template.maxWidth = 200;
-    pieSeries.labels.template.wrap = true;
-    pieSeries.labels.template.fontSize = 16;
+    // pieSeries.labels.template.html = "<div class='label-wrapper text-white flex leading-5 flex-col border border-white rounded-[8px] p-[8px]'><div class='label'>{category}</div><div>{value.value}</div></div>";
+    // // pieSeries.labels.template.text = ''
+    // // pieSeries.labels.template.maxWidth = 200;
+    // pieSeries.labels.template.wrap = true;
+    // pieSeries.labels.template.fontSize = 16;
 
-    pieSeries.labels.template.padding(12, 0, 0, 0);
-    pieSeries.ticks.template.fill = am4core.color("#fff");
+    // pieSeries.labels.template.padding(12, 0, 0, 0);
+    // pieSeries.ticks.template.fill = am4core.color("#fff");
     
     pieSeries.hiddenState.properties.endAngle = -90;
 
@@ -118,8 +119,6 @@ export function Chart() {
     // gradient.addColor(am4core.color("#FC7B03"));
     // pieSeries.labels.template.fill = gradient;//am4core.color("white");
     
-
-    pieSeries.slices.template.propertyFields.fill = "color";
 
     // pieSeries.slices.template.cornerRadius = 12;
     // pieSeries.slices.template.stroke = am4core.color("#4a2abb");

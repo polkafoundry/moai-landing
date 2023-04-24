@@ -20,8 +20,7 @@ export function MoaiToken() {
 
             <div className='flex flex-col gap-[20px] text-white/80 mb-[28px]'>
               <FadeEffect show={show} x={-100}>
-                <div>$MOAI (Wicked Moai token) is the token of the Wicked Moai ecosystem based on the blockchain. It can be used for adopting Moai, exchanging Moai, participating in games and using advanced functions in the Wicked Moai on-chain game world.</div>
-                <div>All players will gather in the community through $MOAI, participate in community governance and get incentives. Players who participate in the game and contribute to the community can obtain $MOAI incentives.</div>
+                <div>The $MOAI token powers the Wicked Moai ecosystem's blockchain-based game world. It facilitates game participation, adoption, and advanced features while incentivizing players who contribute to the community with $MOAI token.</div>
               </FadeEffect>
               <FadeEffect show={show} x={-200}>
                 <div className="flex gap-4 mt-2">

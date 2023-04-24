@@ -13,7 +13,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="fixed z-20 right-0 bottom-0 left-0 min-h-[56px] flex items-center border-t border-t-white/20">
+    <footer className="lg:fixed z-20 right-0 bottom-0 left-0 min-h-[56px] flex items-center border-t border-t-white/20">
       <div className="container mx-auto flex justify-between">
         <div className="flex gap-[40px]">
           <Link className="m-link" href="/privacy-policy">

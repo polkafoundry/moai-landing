@@ -5,7 +5,7 @@ import { ImageCard1, ImageCard2, ImageCard3 } from "@/uikit/image-card";
 import { HomeSection } from "../const";
 import { useScreenActive } from "../ctx";
 import styles from './on-chain-game.module.scss';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 import { PlayIcon } from "@/uikit/icons/play-icon";
@@ -34,6 +34,21 @@ export function OnChainGame() {
     setPlaying(true);
   }
 
+  useEffect(() => {
+    if (!swiper) return;
+
+    swiper.on("click", function (e) {
+      console.log('clicked')
+      // swiper.update();
+      swiper.updateSlides();
+      swiper.update();
+      swiper.updateSlides();
+      // e.clickedSlide.style.width = "500px";
+
+      // swiper.update();
+    });
+  }, [swiper]);
+
   return (
     <div onClick={() => setPlaying(false)} className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div>
@@ -61,8 +76,21 @@ export function OnChainGame() {
                 bulletActiveClass: styles['swiper-pagination-bullet-active'],
               }}
               modules={[Pagination, Autoplay]}
-              className={clsx(styles.swiper, '-translate-x-[100px]')}
-              spaceBetween={50}
+              className={clsx(styles.swiper)}
+              onSlideChangeTransitionEnd={(e) => {
+                e.updateSlides();
+                e.update();
+                e.updateSlides();
+                console.log('onSlideChangeTransitionEnd');
+                // swiper.update();
+              }}
+              onSlideNextTransitionEnd={e => {
+                
+                e.updateSlides();
+                e.update();
+                e.updateSlides();
+                console.log('onSlideNextTransitionEnd');
+              }}
               centeredSlides
               slidesPerView='auto'
               grabCursor
@@ -75,8 +103,7 @@ export function OnChainGame() {
                   'scale-[2] relative z-50': isPlaying && idx === swiperIndex,
                   'scale-[1] relative z-0': isPlaying && idx !== swiperIndex,
                 })}>
-                  <div className={clsx('flex flex-col justify-center items-center relative transition-all', {
-                  })}>
+                  <div className='flex flex-col justify-center items-center relative transition-all'>
                     <ImageCard1 img={game.banner} />
                     {(idx !== swiperIndex || !isPlaying) && <div className='absolute top-[10px] right-[2px] bottom-[34px] left-[2px] bg-black/50 rounded-[10px] pointer-events-none' />}
 
@@ -98,7 +125,7 @@ export function OnChainGame() {
 
                     {swiperIndex === idx && !isPlaying && (
                       <div className='absolute top-[calc(100%-56px)]'>
-                        <button className="btn-cta flex gap-2 items-center px-8"><PlayGameIcon className='text-white' /> Play game</button>
+                        <button onClick={handlePlay} className="btn-cta flex gap-2 items-center px-8"><PlayGameIcon className='text-white' /> Play game</button>
                       </div>
                     )}
                   </div>

@@ -18,6 +18,7 @@ import Link from "next/link";
 import { End } from "./end";
 import MainSliderMobile from "../../../components/mobile/main-slider";
 import useMediaQuery from "../../../components/hooks/media-query";
+import { RoadMap } from "./road-map";
 
 function getSections() {
   return [
@@ -27,6 +28,7 @@ function getSections() {
     { content: <OnChainGame /> },
     { content: <EvilClub /> },
     { content: <MoaiToken /> },
+    { content: <RoadMap /> },
     { content: <FAQ /> },
     { content: <End /> },
   ];
@@ -52,6 +54,7 @@ export function Home({ query }: any) {
     if (!screenRef.current) return;
     screenRef.current.onwheel = function (e) {
       function start() {
+        if (window.innerWidth < 1024) return;
         const nextIdx =
           e.deltaY > 0
             ? Math.min(homeSectionArr.length - 1, activeIdx + 1)
@@ -79,10 +82,10 @@ export function Home({ query }: any) {
             "fixed top-0 right-0 bottom-0 left-0 transition-all duration-1000",
             {
               "z-10 opacity-100": idx === activeIdx,
+              'opacity-0': idx !== activeIdx,
             }
           )}
         >
-          <div className="text-[40px] fixed top-0 left-0">{activeIdx}</div>
           {section.content}
         </div>
       ))}
