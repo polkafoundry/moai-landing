@@ -27,18 +27,18 @@ export function MoaiToken() {
             <div className="grid-col-1 lg:col-span-1 w-full text-white/80">
               <FadeEffect show={show} y={-50}>
                 <h1 className="text-[48px] font-[500] mb-[25px]">
-                  $MOAI token
+                  $MOAI
                 </h1>
               </FadeEffect>
 
               <div className="flex flex-col gap-[20px] text-white/80 mb-[28px]">
                 <FadeEffect show={show} x={-100}>
                   <div>
-                    The $MOAI token powers the Wicked Moai ecosystem's
+                    The $MOAI powers the Wicked Moai ecosystem's
                     blockchain-based game world. It facilitates game
                     participation, adoption, and advanced features while
                     incentivizing players who contribute to the community with
-                    $MOAI token.
+                    $MOAI.
                   </div>
                 </FadeEffect>
                 <FadeEffect show={show} x={-200}>

@@ -54,7 +54,7 @@ export function End() {
               </FadeEffect>
 
               <FadeEffect show={show} x={-20}>
-                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.MOAI_TOKEN}`}>Moai token</Link>
+                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.MOAI_TOKEN}`}>$Moai</Link>
               </FadeEffect>
 
               <FadeEffect show={show} x={-15}>

@@ -14,13 +14,13 @@ const MoaiToken = ({ moaiTokenRef }: any) => {
   return (
     <div className="pt-[60px]" ref={moaiTokenRef}>
       <div className="text-[32px] leading-[38px] text-center font-[500]">
-        $MOAI token
+        $Moai
       </div>
       <p className="mt-3 text-[14px] leading-[22px] text-center px-5 max-w-[366px] mx-auto opacity-80">
-        The $MOAI token powers the Wicked Moai ecosystem's blockchain-based game
+        The $MOAI powers the Wicked Moai ecosystem's blockchain-based game
         world. It facilitates game participation, adoption, and advanced
         features while incentivizing players who contribute to the community
-        with $MOAI token.
+        with $MOAI.
       </p>
       <div className="px-10">
         <Link href={LITEPAPER} target={"_blank"}>
