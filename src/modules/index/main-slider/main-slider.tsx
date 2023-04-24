@@ -240,7 +240,7 @@ export function MainSlider() {
               style={{ background: "url(/assets/slogan-mask.png)" }}
               className="pointer-events-auto bg-cover bg-no-repeat w-[760px] h-[80px] flex justify-center items-center text-[32px] font-[500]"
             >
-              First fully on-chain game on zkSync Era.
+              First fully on-chain game world on zkSync Era.
             </div>
             {/* <img className='w-full' src='/assets/slogan.png' /> */}
           </div>

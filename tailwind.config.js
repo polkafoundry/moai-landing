@@ -27,7 +27,7 @@ module.exports = {
         sm: '1rem',
         lg: '4rem',
         xl: '4rem',
-        '2xl': '4rem',
+        '2xl': '1rem',
       },
       screens: {
         sm: '100%',

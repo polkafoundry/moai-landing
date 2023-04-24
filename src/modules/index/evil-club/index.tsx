@@ -25,11 +25,11 @@ export function EvilClub() {
   const show = useScreenActive(HomeSection.EVIL_CLUB);
 
   return (
-    <div className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div className="h-[100vh] backdrop flex items-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div className='container relative z-10 bg-transparent'>
         <div className='flex justify-between items-center mb-[60px]'>
           <FadeEffect y={-50} show={show}>
-            <h1 className='text-[48px] font-[500]'>First Wicked Moai creators</h1>
+            <h1 className='text-2xl lg:text-[36px] font-[500]'>First Wicked Moai creators</h1>
           </FadeEffect>
 
           <FadeEffect x={100} show={show}>
@@ -54,6 +54,16 @@ export function EvilClub() {
             className={styles.swiper}
             spaceBetween={12}
             slidesPerView={6}
+            breakpoints={{
+              768: {
+                slidesPerView: 4.5,
+                slidesPerGroup: 4,
+              },
+              1024: {
+                slidesPerView: 6,
+                slidesPerGroup: 6,
+              },
+            }}
             slidesPerGroup={6}
             grabCursor
             autoplay={{

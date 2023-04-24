@@ -16,7 +16,7 @@ export function PrivacyPolicy() {
 
         <div
           onWheelCapture={(e) => e.stopPropagation()}
-          className={"max-h-[500px] overflow-x-hidden overflow-y-auto"}
+          className={"max-h-[450px] overflow-x-hidden overflow-y-auto"}
         >
           <div className="pr-[40px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px]">

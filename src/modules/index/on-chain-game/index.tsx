@@ -37,9 +37,16 @@ export function OnChainGame() {
   useEffect(() => {
     if (!swiper) return;
 
+    setTimeout(() => {
+      (swiper as any).enabled && swiper.updateSlides();
+      swiper.update();
+    }, 1000)
+
+
     swiper.on("click", function (e) {
       console.log('clicked')
       // swiper.update();
+      swiper.enable
       swiper.updateSlides();
       swiper.update();
       swiper.updateSlides();
@@ -50,15 +57,15 @@ export function OnChainGame() {
   }, [swiper]);
 
   return (
-    <div onClick={() => setPlaying(false)} className="h-[100vh] pt-[75px] pb-[50px] backdrop flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
+    <div onClick={() => setPlaying(false)} className="h-[100vh] backdrop flex items-center justify-center" style={{ backgroundImage: `url(/assets/bg-moai1.png)`, backgroundSize: 'cover' }}>
       <div>
-        <div className="container relative z-10 mb-[40px]">
-          <FadeEffect y={-50} show={show}>
-            <div className='flex items-baseline gap-2'>
-              <h1 className='text-[48px] font-[500]'>Wicked Moai</h1>
-              <div className="text-[20px] text-[#E76F16]">Join the Evil Moai game world fully on-chain.</div>
-            </div>
-          </FadeEffect>
+        <div className="container relative z-10 mb-[90px]">
+          {/* <FadeEffect y={-50} show={show}> */}
+          <div className='flex items-baseline gap-2'>
+            <h1 className='text-[48px] font-[500]'>Wicked Moai</h1>
+            <div className="text-[20px] text-[#E76F16]">Join the Evil Moai game world fully on-chain.</div>
+          </div>
+          {/* </FadeEffect> */}
         </div>
 
         <div className='container'>
@@ -77,6 +84,7 @@ export function OnChainGame() {
               }}
               modules={[Pagination, Autoplay]}
               className={clsx(styles.swiper)}
+              spaceBetween={40}
               onSlideChangeTransitionEnd={(e) => {
                 e.updateSlides();
                 e.update();
@@ -85,7 +93,7 @@ export function OnChainGame() {
                 // swiper.update();
               }}
               onSlideNextTransitionEnd={e => {
-                
+
                 e.updateSlides();
                 e.update();
                 e.updateSlides();
@@ -100,7 +108,7 @@ export function OnChainGame() {
                   e.stopPropagation();
                   swiper.slideTo(idx)
                 }} className={clsx({
-                  'scale-[2] relative z-50': isPlaying && idx === swiperIndex,
+                  'scale-[1.4] lg:scale-[1.7] relative z-50': isPlaying && idx === swiperIndex,
                   'scale-[1] relative z-0': isPlaying && idx !== swiperIndex,
                 })}>
                   <div className='flex flex-col justify-center items-center relative transition-all'>
