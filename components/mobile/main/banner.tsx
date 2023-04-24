@@ -4,6 +4,7 @@ import {
   sliderThumbs,
 } from "@/modules/index/main-slider/main-slider";
 import { OpenseaIcon } from "@/uikit/icons/opensea-icon";
+import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
@@ -27,10 +28,10 @@ const Banner = ({}: Props) => {
           style={{ backgroundImage: "url(/assets/slogan-mask-mobile.png)" }}
           className={clsx(
             "pointer-events-auto mx-auto bg-no-repeat bg-contain w-full max-w-[390px] h-[88px] flex justify-center items-center",
-            "text-[24px] text-center leading-[24px] font-[500]"
+            "text-[24px] text-center leading-[24px] font-[500] px-5"
           )}
         >
-          First fully on-chain game on zkSync Era.
+          First fully on-chain game world on zkSync Era.
         </div>
 
         <div className="col-span-6 lg:col-span-7 flex justify-center relative">
@@ -107,7 +108,10 @@ const Banner = ({}: Props) => {
           </div>
 
           <div className="w-full mt-5 px-5">
-            <button className={clsx("btn-cta", "w-full")}>Play game</button>
+            <button className={clsx("btn-cta", "w-full flex items-center gap-2 justify-center")}>
+              <PlayGameIcon className="text-white" />
+              Play game
+            </button>
             <button className={clsx("btn-cta-second", "w-full mt-2")}>
               <div className="relative z-10 flex items-center gap-2 justify-center">
                 <OpenseaIcon /> View collectible

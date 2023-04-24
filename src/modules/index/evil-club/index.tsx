@@ -1,4 +1,6 @@
+import { DISCORD_URL } from '@/const/config';
 import { FadeEffect } from '@/uikit/animation/fade-effect';
+import { ExternalLink } from '@/uikit/external-link';
 import { DiscordIcon } from '@/uikit/icons/discord-icon';
 import clsx from 'clsx';
 import { Pagination, Autoplay } from "swiper";
@@ -7,7 +9,7 @@ import { HomeSection } from '../const';
 import { useScreenActive } from '../ctx';
 import styles from './evil-club.module.scss';
 
-const creators = [
+export const creators = [
   { name: 'Tongariki', avatar: '/assets/creator-1.png', title: 'Senior artist', summary: '7+ years in gaming' },
   { name: 'Giki', avatar: '/assets/creator-2.png', title: 'Senior artist', summary: '7+ years in gaming' },
   { name: 'Tongariki', avatar: '/assets/creator-3.png', title: 'Senior artist', summary: '7+ years in gaming' },
@@ -27,13 +29,15 @@ export function EvilClub() {
       <div className='container relative z-10 bg-transparent'>
         <div className='flex justify-between items-center mb-[60px]'>
           <FadeEffect y={-50} show={show}>
-            <h1 className='text-[48px] font-[500]'>First Evil Moai creators</h1>
+            <h1 className='text-[48px] font-[500]'>First Wicked Moai creators</h1>
           </FadeEffect>
 
           <FadeEffect x={100} show={show}>
             <div className='flex gap-4'>
               <button className='btn-white px-8'>BECOME A MEMBER</button>
-              <button className='btn-cta flex items-center justify-center gap-2 px-8'><DiscordIcon /> JOIN CLUB</button>
+              <ExternalLink href={DISCORD_URL}>
+                <button className='btn-cta flex items-center justify-center gap-2 px-8'><DiscordIcon /> JOIN CLUB</button>
+              </ExternalLink>
             </div>
           </FadeEffect>
         </div>

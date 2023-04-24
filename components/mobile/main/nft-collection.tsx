@@ -9,9 +9,9 @@ import { Autoplay } from "swiper";
 import { collection1, collection2 } from "@/modules/index/nft-collection";
 import { EthIcon } from "@/uikit/icons/eth-icon";
 
-const NftCollection = () => {
+const NftCollection = ({ nftCollectionRef }: any) => {
   return (
-    <div className="mt-[60px]">
+    <div className="pt-[60px]" ref={nftCollectionRef}>
       <div className="text-[32px] leading-[38px] text-center font-[500]">
         NFT Collection
       </div>
@@ -73,8 +73,8 @@ const NftCollection = () => {
           styles["slide-wrapper"]
         )}
       >
-        <div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-[#0B0515] to-transparent z-10"/>
-        <div className="absolute bottom-0 left-0 w-full h-[100px] bg-gradient-to-t from-[#0B0515] to-transparent z-10"/>
+        <div className="absolute top-0 left-0 w-full h-[100px] bg-gradient-to-b from-[#0B0515] to-transparent z-10" />
+        <div className="absolute bottom-0 left-0 w-full h-[100px] bg-gradient-to-t from-[#0B0515] to-transparent z-10" />
         <div className="-translate-x-[100px]">
           <Swiper
             modules={[Autoplay]}
@@ -91,7 +91,7 @@ const NftCollection = () => {
             }}
           >
             {collection1?.map((item, idx) => (
-              <SwiperSlide key={idx} style={{ width: "100px" }}>
+              <SwiperSlide key={idx} style={{ width: "106px" }}>
                 <div
                   key={idx}
                   className="rounded-[16px] p-2 bg-[#292929] flex flex-col gap-2"
@@ -102,8 +102,8 @@ const NftCollection = () => {
                     alt="thumb"
                   />
                   <div className="flex justify-between items-center">
-                    <div className="text-[12px]">{item.name}</div>
-                    <div className="flex items-center gap-1 text-[10px]">
+                    <div className="text-[10px]">{item.name}</div>
+                    <div className="flex items-center gap-1 text-[8px]">
                       <EthIcon width={10} height={10} /> {item.price}
                     </div>
                   </div>
@@ -127,7 +127,7 @@ const NftCollection = () => {
             }}
           >
             {collection2?.map((item, idx) => (
-              <SwiperSlide key={idx} style={{ width: "100px" }}>
+              <SwiperSlide key={idx} style={{ width: "106px" }}>
                 <div
                   key={idx}
                   className="rounded-[12px] p-2 bg-[#292929] flex flex-col gap-2"
@@ -138,8 +138,8 @@ const NftCollection = () => {
                     alt="thumb 2"
                   />
                   <div className="flex justify-between items-center">
-                    <div className="text-[12px]">{item.name}</div>
-                    <div className="flex items-center gap-1 text-[10px]">
+                    <div className="text-[10px]">{item.name}</div>
+                    <div className="flex items-center gap-1 text-[8px]">
                       <EthIcon width={10} height={10} /> {item.price}
                     </div>
                   </div>

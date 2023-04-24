@@ -37,8 +37,8 @@ export const mainSliders = [
     desc: 'The Adina was a tribe of ancient airbenders, who could make the wind their ally and bend the air to their will. With a great roar, the Makemake god showers them with super speed, flying ability, and airbending powers. As a result, the Adina can be everywhere and yet nowhere, all at once. They can detect non-permitted behaviors anytime.',
   },
   {
-    backgroundImg: '/assets/bg-moai1.png',
-    backgroundImgSmall: '/assets/bg-moai1-small.png',
+    backgroundImg: '/assets/bg-moai5.png',
+    backgroundImgSmall: '/assets/bg-moai5-small.png',
     name: 'Aaren/Earth', founder: '872 BC', power: 'Nature Control, Earthquakes', amount: 2080,
     traits: ['Calmness', 'Subtly Powerful', 'Values Family'],
     desc: 'In the beginning, the Makemake god has created five elemental tribes: Fire, Water, Air, Earth, and Light. These five tribes were meant to work together in harmony to maintain the protection of the Rapa Nui islanders. The Makemake chose the name Aaren to represent a humble yet powerful Moai tribe - deemed the strongest of the five with the power to control nature and can create earthquakes.',

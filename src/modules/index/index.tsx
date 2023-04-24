@@ -7,7 +7,7 @@ import {
 import { NftCollection } from "./nft-collection";
 import { StoryTelling } from "./story-telling";
 import { OnChainGame } from "./on-chain-game";
-import { Header } from "./header";
+import { Header } from "../../uikit/header";
 import { useRouter } from "next/router";
 import { HomeSection, homeSectionArr } from "./const";
 import { MoaiToken } from "./moai-token";
@@ -15,8 +15,9 @@ import { EvilClub } from "./evil-club";
 import { FAQ } from "./faq";
 import clsx from "clsx";
 import Link from "next/link";
-import useMediaQuery from "../../../components/hooks/media-query";
+import { End } from "./end";
 import MainSliderMobile from "../../../components/mobile/main-slider";
+import useMediaQuery from "../../../components/hooks/media-query";
 
 function getSections() {
   return [
@@ -27,12 +28,15 @@ function getSections() {
     { content: <EvilClub /> },
     { content: <MoaiToken /> },
     { content: <FAQ /> },
+    { content: <End /> },
   ];
 }
-export function Home() {
+export function Home({ query }: any) {
   const router = useRouter();
-  const section = (router.query.section as HomeSection) || HomeSection.MAIN;
+  const section =
+    (router.query.section as HomeSection) || query.section || HomeSection.MAIN;
   const [activeIdx, setActive] = useState(homeSectionArr.indexOf(section));
+
   const screenRef = useRef<HTMLDivElement>(null);
   const transitionRef = useRef<any>();
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -50,7 +54,7 @@ export function Home() {
       function start() {
         const nextIdx =
           e.deltaY > 0
-            ? Math.min(6, activeIdx + 1)
+            ? Math.min(homeSectionArr.length - 1, activeIdx + 1)
             : Math.max(0, activeIdx - 1);
         const secKey = homeSectionArr[nextIdx];
         router.push(`/?section=${secKey}`, undefined, { shallow: true });
@@ -68,8 +72,6 @@ export function Home() {
 
   return (
     <div ref={screenRef} onScroll={(e) => e.preventDefault()}>
-      <Header />
-
       {sections.map((section, idx) => (
         <div
           key={idx}
@@ -77,22 +79,17 @@ export function Home() {
             "fixed top-0 right-0 bottom-0 left-0 transition-all duration-1000",
             {
               "z-10 opacity-100": idx === activeIdx,
-              // 'scale-95': idx !== activeIdx,
-              // 'duration-1000 opacity-95': idx !== activeIdx,
-              // 'invisible': idx !== activeIdx,
-              // 'visible': idx === activeIdx,
-              // 'opacity-100': idx === activeIdx,
-              // 'duration-500 scale-100': idx === activeIdx,
             }
           )}
         >
+          <div className="text-[40px] fixed top-0 left-0">{activeIdx}</div>
           {section.content}
         </div>
       ))}
 
       <div
         className={clsx(
-          "fixed top-0 -mt-[56px] bottom-0 left-[8px] flex flex-col items-center justify-center z-20 gap-[20px] opacity-0 transition-opacity duration-500",
+          "hidden fixed top-0 -mt-[56px] bottom-0 left-[8px] lg:flex flex-col items-center justify-center z-20 gap-[20px] opacity-0 transition-opacity duration-500",
           {
             "opacity-100": activeIdx !== 0,
           }

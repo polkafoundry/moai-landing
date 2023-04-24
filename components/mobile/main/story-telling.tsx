@@ -2,11 +2,11 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
 
-const StoryTelling = () => {
+const StoryTelling = ({ storyRef }: any) => {
   const [isShow, setIsShow] = useState<boolean>(false);
 
   return (
-    <div className="pt-[60px]">
+    <div className="pt-[60px]" ref={storyRef}>
       <div className="text-[32px] leading-[38px] text-center">The Legend</div>
       <p
         className={clsx(

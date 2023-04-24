@@ -1,3 +1,4 @@
+import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
@@ -54,15 +55,18 @@ const VideoGameplay = ({ className, url, preview }: GameplayProps) => {
             />
           </div>
         )}
+        <button className="absolute bottom-[-13px] left-1/2 z-30 w-[200px] -translate-x-1/2 btn-cta flex gap-2 items-center justify-center">
+          <PlayGameIcon className="text-white" /> Play game
+        </button>
       </div>
     </div>
   );
 };
 
-const WickedMoai = () => {
+const WickedMoai = ({ wickedMoaiRef }: any) => {
   return (
-    <div>
-      <div className="text-[32px] leading-[38px] font-[500] text-center mt-[60px]">
+    <div ref={wickedMoaiRef} className="pt-[60px]">
+      <div className="text-[32px] leading-[38px] font-[500] text-center">
         Wicked Moai
       </div>
       <p className="text-[14px] leading-[16px] text-[#F98306] text-center font-[500] max-w-[280px] mx-auto mt-[12px]">
@@ -73,6 +77,41 @@ const WickedMoai = () => {
         url=""
         preview="/assets/game-1-preview-mobile.png"
       />
+      <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
+        Game name 1
+      </p>
+      <VideoGameplay
+        className="mt-10"
+        url=""
+        preview="/assets/game-2-preview-mobile.png"
+      />
+      <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
+        Game name 2
+      </p>
+      <VideoGameplay
+        className="mt-10"
+        url=""
+        preview="/assets/game-3-preview-mobile.png"
+      />
+      <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
+        Game name 3
+      </p>
+      <VideoGameplay
+        className="mt-10"
+        url=""
+        preview="/assets/game-4-preview-mobile.png"
+      />
+      <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
+        Game name 4
+      </p>
+      <VideoGameplay
+        className="mt-10"
+        url=""
+        preview="/assets/game-5-preview-mobile.png"
+      />
+      <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
+        Game name 5
+      </p>
     </div>
   );
 };
