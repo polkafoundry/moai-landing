@@ -1,6 +1,7 @@
 import { HomeSection } from "@/modules/index/const";
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
 import { MailIcon } from "@/uikit/icons/mail-icon";
+import { TelegramIcon } from "@/uikit/icons/telegram-icon";
 import { TwitterIcon } from "@/uikit/icons/twitter-icon";
 import clsx from "clsx";
 import Image from "next/image";
@@ -84,10 +85,11 @@ const HeaderMobile = () => {
           </p>
           <div className="flex gap-[24px] mt-8 justify-center">
             <Link
-              href="/"
+              href="https://t.me/wickedmoai"
+              target={"_blank"}
               className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#E71A16] to-[#FC9303]"
             >
-              <MailIcon className="text-white" width={20} height={20} />
+              <TelegramIcon className="text-white" width={20} height={20} />
             </Link>
             <Link
               href="/"

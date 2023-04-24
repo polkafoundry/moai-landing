@@ -29,10 +29,6 @@ export function ChartMobile({ dataMoaiToken }: Props) {
     pieSeries.labels.template.fontSize = 11;
     pieSeries.ticks.template.disabled = true;
     pieSeries.alignLabels = false;
-    pieSeries.labels.template.html =
-      "<div class='label-wrapper text-white max-w-[120px] text-center flex leading-5 flex-colrounded-[8px] p-[8px]'>{category}</div>";
-    pieSeries.labels.template.radius = am4core.percent(-78);
-    pieSeries.labels.template.fill = am4core.color("white");
     pieSeries.labels.template.relativeRotation = 90;
 
     pieSeries.hiddenState.properties.endAngle = -90;
@@ -40,7 +36,6 @@ export function ChartMobile({ dataMoaiToken }: Props) {
     (x as any)?._logo?.dispose();
 
     pieSeries.labels.template.adapter.add("fill", function (color, target) {
-      console.log(target.dataItem);
       if (target.dataItem && target.dataItem.values.value.percent < 11) {
         return am4core.color("#000");
       }

@@ -8,12 +8,14 @@ import styles from "../../../src/modules/index/nft-collection/nft-collection.mod
 import { Autoplay } from "swiper";
 import { collection1, collection2 } from "@/modules/index/nft-collection";
 import { EthIcon } from "@/uikit/icons/eth-icon";
+import Link from "next/link";
+import { HomeSection } from "@/modules/index/const";
 
 const NftCollection = ({ nftCollectionRef }: any) => {
   return (
     <div className="pt-[60px]" ref={nftCollectionRef}>
       <div className="text-[32px] leading-[38px] text-center font-[500]">
-        NFT Collection
+        Wicked Moai NFTs
       </div>
       <Image
         src="/assets/nft-collection.png"
@@ -25,11 +27,11 @@ const NftCollection = ({ nftCollectionRef }: any) => {
       <div className="mt-5 text-[24px] leading-[28px] text-center font-[500]">
         NFT collectibles
       </div>
-      <p className="text-[14px] leading-[22px] mt-2 mx-auto text-center w-full px-5 max-w-[310px]">
+      <p className="text-[14px] leading-[22px] mt-2 mx-auto text-center w-full px-5 max-w-[310px] opacity-80">
         Special NFT collectible for special user to unlock special features
       </p>
       <div className="mt-5 text-center">
-        <button className="btn-cta px-5 py-[12px] mx-auto flex gap-2 items-center text-[14px] leading-[22px]">
+        <button className="btn-cta px-5 py-[12px] mx-auto flex gap-2 items-center text-[14px] leading-[15px]">
           <DiscordIcon /> Join private club
         </button>
       </div>
@@ -43,18 +45,20 @@ const NftCollection = ({ nftCollectionRef }: any) => {
       <div className="mt-5 text-[24px] leading-[28px] text-center font-[500]">
         Consumption NFT
       </div>
-      <p className="text-[14px] leading-[22px] mt-2 mx-auto text-center w-full px-5 max-w-[310px]">
+      <p className="text-[14px] leading-[22px] mt-2 mx-auto text-center w-full px-5 max-w-[310px] opacity-80">
         Own NFT to navigate Wicked Moai game world and enjoy exciting game play
       </p>
       <div className="px-5 grid grid-cols-2 gap-[12px] mt-5">
-        <button
-          className={clsx(
-            "btn-cta",
-            "w-full text-[14px] leading-[15px] py-[12px]"
-          )}
-        >
-          Play game
-        </button>
+        <Link href={`/?section=${HomeSection.ONCHAIN_GAME}`}>
+          <button
+            className={clsx(
+              "btn-cta",
+              "w-full text-[14px] leading-[15px] py-[12px]"
+            )}
+          >
+            Play game
+          </button>
+        </Link>
         <button
           className={clsx(
             "btn-cta-second",
@@ -62,7 +66,7 @@ const NftCollection = ({ nftCollectionRef }: any) => {
           )}
         >
           <div className="relative z-10 flex items-center gap-2 justify-center">
-            <OpenseaIcon /> Buy Now
+            <OpenseaIcon width={15} height={15} /> Buy Now
           </div>
         </button>
       </div>

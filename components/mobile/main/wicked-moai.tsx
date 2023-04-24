@@ -13,7 +13,6 @@ const VideoGameplay = ({ className, url, preview }: GameplayProps) => {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
   const handlePlay = () => {
-    console.log(ref);
     const isPaused = ref.current?.paused;
     if (isPaused) {
       ref?.current?.play();
@@ -78,7 +77,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-1-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Game name 1
+        Aqua: Depths of Water
       </p>
       <VideoGameplay
         className="mt-10"
@@ -86,7 +85,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-2-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Game name 2
+        Adina: Tempest of Air
       </p>
       <VideoGameplay
         className="mt-10"
@@ -94,7 +93,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-3-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Game name 3
+        Agni: Inferno of Fire
       </p>
       <VideoGameplay
         className="mt-10"
@@ -102,7 +101,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-4-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Game name 4
+        Aegle: Radiance of Light
       </p>
       <VideoGameplay
         className="mt-10"
@@ -110,7 +109,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-5-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Game name 5
+        Aaren: Echoes of Earth
       </p>
     </div>
   );

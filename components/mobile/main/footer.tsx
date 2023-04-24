@@ -1,5 +1,6 @@
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
 import { MailIcon } from "@/uikit/icons/mail-icon";
+import { TelegramIcon } from "@/uikit/icons/telegram-icon";
 import { TwitterIcon } from "@/uikit/icons/twitter-icon";
 import clsx from "clsx";
 import Image from "next/image";
@@ -27,10 +28,11 @@ const FooterMobile = ({ showAll = true }: Props) => {
           </p>
           <div className="flex gap-[24px] mt-8 justify-center">
             <Link
-              href="/"
+              href="https://t.me/wickedmoai"
+              target={"_blank"}
               className="w-[40px] h-[40px] flex items-center justify-center rounded-full bg-gradient-to-r from-[#E71A16] to-[#FC9303]"
             >
-              <MailIcon className="text-white" width={20} height={20} />
+              <TelegramIcon className="text-white" width={20} height={20} />
             </Link>
             <Link
               href="/"
@@ -60,6 +62,10 @@ const FooterMobile = ({ showAll = true }: Props) => {
         <Link className="m-link" href="/terms-and-conditions">
           Terms and Conditions
         </Link>
+      </div>
+      <div className="w-full h-[1px] bg-white opacity-20" />
+      <div className="text-[12px] p-2 text-center">
+        copy right: @WickedMoai team 2023
       </div>
     </footer>
   );

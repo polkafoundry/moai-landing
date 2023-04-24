@@ -1,6 +1,7 @@
 import { WhitePaperIcon } from "@/uikit/icons/whitepaper-icon";
 import { ChartMobile } from "./chart";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 const ChartComponent = dynamic(
   () => import("./chart").then((m) => m.ChartMobile),
   { ssr: false }
@@ -14,7 +15,7 @@ const dataMoaiToken = [
   },
   {
     country: "TREASURY",
-    litres: 3,
+    litres: 10,
     color: "#ff5b00",
   },
   {
@@ -51,20 +52,17 @@ const MoaiToken = ({ moaiTokenRef }: any) => {
         $MOAI token
       </div>
       <p className="mt-3 text-[14px] leading-[22px] text-center px-5 max-w-[366px] mx-auto opacity-80">
-        $MOAI (Wicked Moai token) is the token of the Wicked Moai ecosystem
-        based on the blockchain. It can be used for adopting Moai, exchanging
-        Moai, participating in games and using advanced functions in the Wicked
-        Moai on-chain game world.
-      </p>
-      <p className="mt-3 text-[14px] leading-[22px] text-center px-5 max-w-[366px] mx-auto opacity-80">
-        All players will gather in the community through $MOAI, participate in
-        community governance and get incentives. Players who participate in the
-        game and contribute to the community can obtain $MOAI incentives.
+        The $MOAI token powers the Wicked Moai ecosystem's blockchain-based game
+        world. It facilitates game participation, adoption, and advanced
+        features while incentivizing players who contribute to the community
+        with $MOAI token.
       </p>
       <div className="px-10">
-        <button className="btn-white w-full mt-5">
-          <WhitePaperIcon /> WHITEPAPER
-        </button>
+        <Link href={"https://litepaper.moai3.xyz"} target={"_blank"}>
+          <button className="btn-white w-full mt-5">
+            <WhitePaperIcon /> WHITEPAPER
+          </button>
+        </Link>
         <button className="btn-cta w-full mt-3">Join DAO</button>
       </div>
       <div>

@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { HomeSection } from "@/modules/index/const";
 import {
   mainSliders,
   sliderThumbs,
@@ -7,6 +8,7 @@ import { OpenseaIcon } from "@/uikit/icons/opensea-icon";
 import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface Props {}
@@ -101,17 +103,24 @@ const Banner = ({}: Props) => {
                 </span>{" "}
                 <span>{mainSliders[swiperIndex]?.traits.join(", ")}</span>
               </div>
-              <div className="text-white/80 text-[14px] leading-[22px] h-[44px] block-ellipsis-2">
+              <div className="text-white/80 text-[14px] leading-[22px]">
                 {mainSliders[swiperIndex]?.desc}
               </div>
             </div>
           </div>
 
           <div className="w-full mt-5 px-5">
-            <button className={clsx("btn-cta", "w-full flex items-center gap-2 justify-center")}>
-              <PlayGameIcon className="text-white" />
-              Play game
-            </button>
+            <Link href={`/?section=${HomeSection.ONCHAIN_GAME}`}>
+              <button
+                className={clsx(
+                  "btn-cta",
+                  "w-full flex items-center gap-2 justify-center"
+                )}
+              >
+                <PlayGameIcon className="text-white" />
+                Play game
+              </button>
+            </Link>
             <button className={clsx("btn-cta-second", "w-full mt-2")}>
               <div className="relative z-10 flex items-center gap-2 justify-center">
                 <OpenseaIcon /> View collectible
