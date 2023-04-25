@@ -2,16 +2,20 @@ import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_dataviz from "@amcharts/amcharts4/themes/dataviz";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import clsx from "clsx";
+import { FadeEffect } from "@/uikit/animation/fade-effect";
 import styles from './chart.module.scss';
-
-import { useLayoutEffect, useRef } from "react";
-import { useScreenActive } from "../ctx";
-import { HomeSection } from "../const";
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_dataviz);
 
 export function Chart({ dataMoaiToken }: { dataMoaiToken: any }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setShow(true), 200);
+  }, []);
+
   const chart = useRef<any>(null);
 
   useLayoutEffect(() => {
@@ -22,50 +26,12 @@ export function Chart({ dataMoaiToken }: { dataMoaiToken: any }) {
     let data = dataMoaiToken;
 
     x.data = data;
-    // let visits = 10;
-
-    // for (let i = 1; i < 366; i++) {
-    //   visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-    //   data.push({ date: new Date(2018, 0, i), name: "name" + i, value: visits });
-    // }
-
-    // x.data = data;
-
-    // let dateAxis = x.xAxes.push(new am4charts.DateAxis());
-    // dateAxis.renderer.grid.template.location = 0;
-
-    // let valueAxis: any = x.yAxes.push(new am4charts.ValueAxis());
-    // valueAxis.tooltip.disabled = true;
-    // valueAxis.renderer.minWidth = 35;
-
-    // let series = x.series.push(new am4charts.LineSeries());
-    // series.dataFields.dateX = "date";
-    // series.dataFields.valueY = "value";
-    // series.tooltipText = "{valueY.value}";
-    // x.cursor = new am4charts.XYCursor();
-
-    // let scrollbarX = new am4charts.XYChartScrollbar();
-    // scrollbarX.series.push(series);
-    // x.scrollbarX = scrollbarX;
-
-    // chart.current = x;
-
 
     var pieSeries = x.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "litres";
     pieSeries.dataFields.category = "country";
     pieSeries.slices.template.propertyFields.fill = "color";
     pieSeries.radius = 180;
-
-    // pieSeries.labels.template.htmlContainer = <div></div>
-    // pieSeries.labels.template.html = "<div class='label-wrapper text-white flex leading-5 flex-col border border-white rounded-[8px] p-[8px]'><div class='label'>{category}</div><div>{value.value}</div></div>";
-    // // pieSeries.labels.template.text = ''
-    // // pieSeries.labels.template.maxWidth = 200;
-    // pieSeries.labels.template.wrap = true;
-    // pieSeries.labels.template.fontSize = 16;
-
-    // pieSeries.labels.template.padding(12, 0, 0, 0);
-    // pieSeries.ticks.template.fill = am4core.color("#fff");
 
     pieSeries.hiddenState.properties.endAngle = -90;
 
@@ -79,24 +45,8 @@ export function Chart({ dataMoaiToken }: { dataMoaiToken: any }) {
       })
     });
 
+    // hide amchart label
     pieSeries.labels.template.text = "";
-    // let gradient = new am4core.LinearGradient();gradient.addColor(am4core.color("red"));
-    // gradient.addColor(am4core.color("#FF1100"));
-    // gradient.addColor(am4core.color("#FC7B03"));
-    // pieSeries.labels.template.fill = gradient;//am4core.color("white");
-
-
-    // pieSeries.slices.template.cornerRadius = 12;
-    // pieSeries.slices.template.stroke = am4core.color("#4a2abb");
-    // pieSeries.slices.template.strokeWidth = 2;
-    // pieSeries.slices.template.strokeOpacity = 1;
-    // var label = x.createChild(am4core.Label);
-    // label.text = "Hello world!";
-    // label.fontSize = 20;
-    // label.align = "center";
-    // label.isMeasured = false;
-    // label.x = 70;
-    // label.y = 20;
     chart.current = x;
 
     return () => {
@@ -105,6 +55,109 @@ export function Chart({ dataMoaiToken }: { dataMoaiToken: any }) {
   }, []);
 
   return (
-    <div className={styles.chart} id="chartdiv" style={{ width: "100%", height: '100%', minHeight: '400px' }}> </div>
+    <div className='relative'>
+      <div className={clsx(styles.chart, 'pointer-events-none')} id="chartdiv" style={{ width: "100%", height: '100%', minHeight: '400px' }}> </div>
+
+      <div className='absolute text-white top-0 right-0 bottom-0 left-0 flex justify-center items-center pointer-events-none -translate-x-[9px] -translate-y-[1px]'>
+        <div className="relative w-[364px] h-[364px] border-[6px] border-white rounded-full">
+          <div>
+            <div className='absolute -right-[22px] top-[76px] h-[1px] w-[50px] bg-white -rotate-45' />
+            <div className='absolute -right-[15px] top-[9px] h-[50px] w-[1px] bg-white' />
+
+            <FadeEffect show={show} x={100}>
+              <div className='absolute -right-[97px] -top-[48px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col'>
+                <div className='absolute -bottom-[4px] left-[calc(50%-4px)] w-[7px] h-[7px] rounded-full bg-white'></div>
+                <div className='text-gradient font-[500]' style={{
+                  ['--text-gradient-from' as string]: '#FF1100',
+                  ['--text-gradient-to' as string]: '#FC7B03',
+                }}>{dataMoaiToken[0].country}</div>
+                <div>{dataMoaiToken[0].litres}%</div>
+              </div>
+            </FadeEffect>
+          </div>
+
+          <div>
+            <div className='absolute right-[198px] -bottom-[14px] h-[1px] w-[36px] bg-white rotate-[65deg]' />
+            <div className='absolute right-[68px] -bottom-[30px] h-[1px] w-[140px] bg-white' />
+            <div className='absolute -right-[70px] -bottom-[58px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col'>
+              <div className='absolute bottom-[calc(50%-4px)] -left-[4px] w-[7px] h-[7px] rounded-full bg-white'></div>
+              <div className='text-gradient font-[500]' style={{
+                ['--text-gradient-from' as string]: '#FF9404',
+                ['--text-gradient-to' as string]: '#FF5B00',
+              }}>{dataMoaiToken[1].country}</div>
+              <div>{dataMoaiToken[1].litres}%</div>
+            </div>
+          </div>
+
+          <div>
+            <div className='absolute left-[43px] bottom-[19px] h-[1px] w-[36px] bg-white -rotate-[55deg]' />
+            <div className='absolute left-[50px] -bottom-[10px] h-[15px] w-[1px] bg-white' />
+            <div className='absolute -left-[0px] -bottom-[68px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col'>
+              <div className='absolute left-[calc(50%-4px)] -top-[4px] w-[7px] h-[7px] rounded-full bg-white'></div>
+              <div className='text-gradient font-[500]' style={{
+                ['--text-gradient-from' as string]: '#FF5B00',
+                ['--text-gradient-to' as string]: '#FC9803',
+              }}>{dataMoaiToken[2].country}</div>
+              <div>{dataMoaiToken[2].litres}%</div>
+            </div>
+          </div>
+
+          <div>
+            <div className='absolute left-[39px] bottom-[37px] h-[19px] w-[1px] bg-white rotate-[45deg]' />
+            <div className='absolute left-[18px] bottom-[39px] h-[1px] w-[15px] bg-white' />
+
+            <div className='absolute -left-[140px] bottom-[10px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col'>
+              <div className='absolute top-[calc(50%-4px)] -right-[4px] w-[7px] h-[7px] rounded-full bg-white'></div>
+              <div className='text-gradient font-[500]' style={{
+                ['--text-gradient-from' as string]: '#FF9404',
+                ['--text-gradient-to' as string]: '#FF5B00',
+              }}>{dataMoaiToken[3].country}</div>
+              <div>{dataMoaiToken[3].litres}%</div>
+            </div>
+          </div>
+
+          <div>
+            <div className='absolute -left-[44px] bottom-[129px] h-[1px] w-[50px] bg-white' />
+            <div className='absolute -left-[140px] bottom-[100px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col'>
+              <div className='absolute top-[calc(50%-4px)] -right-[4px] w-[7px] h-[7px] rounded-full bg-white'></div>
+              <div className='text-gradient font-[500]' style={{
+                ['--text-gradient-from' as string]: '#FCCC06',
+                ['--text-gradient-to' as string]: '#FF5B00',
+              }}>{dataMoaiToken[4].country}</div>
+              <div>{dataMoaiToken[4].litres}%</div>
+            </div>
+          </div>
+
+          <div>
+            <div className='absolute -left-[30px] top-[108px] h-[1px] w-[42px] bg-white' />
+            <FadeEffect show={show} x={-100}>
+              <div className='absolute -left-[125px] top-[80px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col'>
+                <div className='absolute top-[calc(50%-4px)] -right-[4px] w-[7px] h-[7px] rounded-full bg-white'></div>
+                <div className='text-gradient font-[500]' style={{
+                  ['--text-gradient-from' as string]: '#E7A016',
+                  ['--text-gradient-to' as string]: '#FCF203',
+                }}>{dataMoaiToken[5].country}</div>
+                <div>{dataMoaiToken[5].litres}%</div>
+              </div>
+            </FadeEffect>
+          </div>
+
+          <div>
+            <div className='absolute left-[49px] -top-[30px] h-[70px] w-[1px] -rotate-[45deg] bg-white' />
+            <div className='absolute -left-[17px] -top-[20px] h-[1px] w-[42px] bg-white' />
+            <FadeEffect show={show} x={-100}>
+              <div className='absolute -left-[97px] -top-[48px] p-[8px] py-[4px] border border-white rounded-[8px] flex flex-col pr-8'>
+                <div className='absolute top-[calc(50%-4px)] -right-[4px] w-[7px] h-[7px] rounded-full bg-white'></div>
+                <div className='text-gradient font-[500]' style={{
+                  ['--text-gradient-from' as string]: '#5BDD1D',
+                  ['--text-gradient-to' as string]: '#BBFC03',
+                }}>{dataMoaiToken[6].country}</div>
+                <div>{dataMoaiToken[6].litres}%</div>
+              </div>
+            </FadeEffect>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

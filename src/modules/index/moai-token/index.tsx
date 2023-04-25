@@ -6,6 +6,7 @@ import { HomeSection } from "../const";
 import { useScreenActive } from "../ctx";
 import { ExternalLink } from "@/uikit/external-link";
 import { LITEPAPER } from "@/const/config";
+
 const ChartComponent = dynamic(() => import("./chart").then((m) => m.Chart), {
   ssr: false,
 });
@@ -23,8 +24,8 @@ export function MoaiToken() {
         }}
       >
         <div className="h-full lg:h-auto container relative z-10 bg-transparent">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[80px]">
-            <div className="grid-col-1 lg:col-span-1 w-full text-white/80">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-[40px] lg:gap-[110px]">
+            <div className="col-span-3 lg:col-span-2 w-full text-white/80 flex flex-col justify-center">
               <FadeEffect show={show} y={-50}>
                 <h1 className="text-[48px] font-[500] mb-[25px]">
                   $MOAI
@@ -59,28 +60,9 @@ export function MoaiToken() {
                 </FadeEffect>
               </div>
             </div>
-            <div className="col-span-1 flex justify-center flex-col pb-8">
-              <div className="min-h-[400px]">
+            <div className="col-span-3 flex justify-center flex-col pb-8">
+              <div className="min-h-[400px] z-40 py-8">
                 {show && <ChartComponent dataMoaiToken={dataMoaiToken} />}
-              </div>
-              <div className="px-5">
-                <div className="grid grid-cols-2 gap-x-8 gap-y-2 px-5 py-4 border-[2px] border-[#FFFFFF] border-opacity-10">
-                  {[...dataMoaiToken]
-                    ?.sort((a, b) => b?.litres - a?.litres)
-                    ?.map((data: any, index: number) => {
-                      return (
-                        <div
-                          key={index}
-                          className="flex justify-between text-[16px]"
-                        >
-                          <div style={{ color: data?.color }}>
-                            {data?.country}
-                          </div>
-                          <div>{`${data?.litres}%`}</div>
-                        </div>
-                      );
-                    })}
-                </div>
               </div>
             </div>
           </div>

@@ -57,15 +57,14 @@ body {
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    width: 160px;
-    background: linear-gradient(90deg, #07030E 3.57%, rgba(7, 3, 14, 0) 100%);
+    width: 400px;
     z-index: 30;
+    background: linear-gradient(90deg, #0B0515 3.57%, rgba(7, 3, 14, 0) 100%);
   }
 }
 
@@ -186,4 +185,12 @@ body {
 .hide-scroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.text-gradient {
+  background: linear-gradient(86.03deg, var(--text-gradient-from) 4.07%, var(--text-gradient-to) 79.02%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }

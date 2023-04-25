@@ -12,6 +12,7 @@ import Link from "next/link";
 import { ExternalLink } from "@/uikit/external-link";
 import { DISCORD_URL } from "@/const/config";
 import { PlayGameIcon } from "@/uikit/icons/play-game-icon";
+import { useRef } from "react";
 
 export const collection1 = [
   { name: "#1911", price: "0.019 ETH", thumb: "/assets/nft-1911.png" },
@@ -40,6 +41,7 @@ export const collection2 = [
 ];
 
 export function NftCollection() {
+  const eleRef = useRef<HTMLDivElement>(null);
   const show = useScreenActive(HomeSection.NFT_COLLECTION);
 
   return (
@@ -65,7 +67,15 @@ export function NftCollection() {
               </div>
             </FadeEffect>
             <FadeEffect show={show} y={50}>
-              <div className="flex flex-col gap-10">
+              <div
+                ref={eleRef}
+                className="flex flex-col gap-10 max-h-[calc(100vh-300px)] overflow-auto"
+                onWheelCapture={e => {
+                  if (Number(eleRef.current?.scrollHeight) > Number(eleRef.current?.clientHeight)) {
+                    e.stopPropagation();
+                  }
+                }}
+              >
                 <div className="flex flex-col md:flex-row gap-[12px] md:gap-[30px]">
                   <div className="w-[190px]">
                     <img src="/assets/nft-collection2.png" />
@@ -153,24 +163,21 @@ export function NftCollection() {
                         slidesPerView: 3,
                       },
                     }}
-                    autoplay={{
-                      reverseDirection: true,
-                      delay: 2000,
-                      disableOnInteraction: false,
-                    }}
+                  autoplay={{
+                    reverseDirection: true,
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  }}
                   >
                     {collection1.map((item, idx) => (
                       <SwiperSlide key={idx}>
                         <div
                           key={idx}
-                          className="rounded-[16px] p-4 bg-[#292929] flex flex-col gap-2"
+                          className="rounded-[12px] p-[12px] bg-[#292929] flex flex-col gap-[12px]"
                         >
                           <img src={item.thumb} className="rounded-[12px]" />
                           <div className="flex justify-between items-center">
-                            <div className="lg:text-md">{item.name}</div>
-                            {/* <div className="flex items-center gap-1 text-md">
-                              <EthIcon /> {item.price}
-                            </div> */}
+                            <div>{item.name}</div>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -211,9 +218,6 @@ export function NftCollection() {
                           <img src={item.thumb} className="rounded-[12px]" />
                           <div className="flex justify-between items-center">
                             <div>{item.name}</div>
-                            {/* <div className="flex items-center gap-1">
-                              <EthIcon /> {item.price}
-                            </div> */}
                           </div>
                         </div>
                       </SwiperSlide>

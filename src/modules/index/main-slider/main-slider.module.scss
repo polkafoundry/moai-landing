@@ -7,11 +7,15 @@
   background: linear-gradient(270deg, #000000 57.71%, rgba(0, 0, 0, 0) 100%);
 
   opacity: 0.8;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .backdrop-bottom {
   position: absolute;
   height: 320px;
   right: 0; bottom: 0; left: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 82.03%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 60.67%);
+  z-index: 1;
+  pointer-events: none;
 }

@@ -108,7 +108,7 @@ export function EvilClub() {
 
           <div
             id="evil-club-pagination"
-            className="swiper-pagination absolute pt-4 top-[calc(100%+30px)] left-0 w-full h-6 flex items-center gap-[8px] z-50"
+            className="swiper-pagination absolute pt-4 top-full left-0 w-full h-6 flex items-center gap-[8px] z-50"
           ></div>
         </div>
       </div>

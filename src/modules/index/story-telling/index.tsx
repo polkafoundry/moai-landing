@@ -2,6 +2,7 @@ import { FadeEffect } from "@/uikit/animation/fade-effect";
 import { HomeSection } from "../const";
 import { useScreenActive } from "../ctx";
 import { useState } from "react";
+import clsx from "clsx";
 
 export function StoryTelling() {
   const show = useScreenActive(HomeSection.STORY_TELLING);
@@ -10,7 +11,7 @@ export function StoryTelling() {
   return (
     <div className="backdrop">
       <div
-        className="h-[100vh] py-[60px] lg:py-0 overflow-auto flex items-center z-10"
+        className="h-[100vh] pt-[75px] pb-[50px] overflow-auto flex items-center z-10"
         style={{
           backgroundImage: `url(/assets/bg-moai.png)`,
           backgroundSize: "cover",
@@ -18,7 +19,7 @@ export function StoryTelling() {
       >
         <div className="h-full lg:h-auto container relative z-10 bg-transparent">
           <FadeEffect show={show} y={-50}>
-            <h1 className="text-[48px] font-[500] mb-[25px]">The Legend</h1>
+            <h1 className="text-[48px] font-[500] mb-[25px] mt-[75px]">The Legend</h1>
           </FadeEffect>
 
           <div className="grid grid-cols-1 lg:grid-cols-2">
@@ -49,7 +50,7 @@ export function StoryTelling() {
                       However, as life began to prosper, people began to abandon
                       their faith. Eventually, a group of Rapa Nui islanders
                       ended up destroying the eyes of Moai, leaving behind the
-                      blessing spirit of Mana with no homes to go to. 
+                      blessing spirit of Mana with no homes to go to.
                     </FadeEffect>
                     <FadeEffect show={show} y={50}>
                       Their arrogance and hubris brought about the wrath of the
@@ -64,7 +65,7 @@ export function StoryTelling() {
                       know as the “Wicked Moai NFT”. Legend has it that Moai
                       will bond with the worthy holders of the NFTs and bestow
                       gifts upon them - whether luck, creativity, or strength,
-                      and ask only for care and respect in return. 
+                      and ask only for care and respect in return.
                     </FadeEffect>
                     <FadeEffect show={show} y={50}>
                       Until now, 1043 Wicked Moai NFTs have been found all over
@@ -88,7 +89,7 @@ export function StoryTelling() {
                     </FadeEffect>
                     <FadeEffect show={show} y={50}>
                       Were the Rapa Nui islanders truly disappear because of the
-                      then-reigning natural disasters and deathly diseases? 
+                      then-reigning natural disasters and deathly diseases?
                     </FadeEffect>
                     <FadeEffect show={show} y={50}>
                       Or their vanishment without a trace, leaving behind only

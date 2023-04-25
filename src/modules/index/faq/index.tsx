@@ -149,7 +149,7 @@ export function FAQ() {
         <div
           ref={elRef}
           onClick={() => setIgnoreScroll(false)}
-          className={clsx("max-h-[500px]", {
+          className={clsx("max-h-[calc(100vh-300px)]", {
             "overflow-auto": show,
           })}
         >
@@ -180,16 +180,12 @@ export function FAQ() {
                 ))}
               </div>
               <div className="w-full relative">
-                <div className="sticky top-0 bottom-0">
-                  <div className="flex justify-center items-center h-[500px]">
-                    <div>
-                      <div className="text-highlight text-[24px] font-[500] mb-[12px]">
-                        {faq[activeIdx].question}
-                      </div>
-                      <div className={clsx("font-[400] text-white/80", {})}>
-                        {faq[activeIdx].answer}
-                      </div>
-                    </div>
+                <div className="sticky top-0 right-0 left-0">
+                  <div className="text-highlight text-[24px] font-[500] mb-[12px]">
+                    {faq[activeIdx].question}
+                  </div>
+                  <div className={clsx("font-[400] text-white/80", {})}>
+                    {faq[activeIdx].answer}
                   </div>
                 </div>
               </div>
