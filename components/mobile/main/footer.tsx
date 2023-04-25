@@ -66,7 +66,7 @@ const FooterMobile = ({ showAll = true }: Props) => {
       </div>
       <div className="w-full h-[1px] bg-white opacity-20" />
       <div className="text-[12px] p-2 text-center">
-        copy right: @WickedMoai team 2023
+        Copyright: @WickedMoai team 2023
       </div>
     </footer>
   );
