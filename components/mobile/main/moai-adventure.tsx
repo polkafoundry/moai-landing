@@ -47,7 +47,7 @@ const adventures = [
   {
     title: "Community Development",
     content:
-      "Airdrop, KOLs networking, Game Release, Staking&trading rewards, TGE",
+      "Airdrop, KOLs Networking, Game Release, Staking & Trading Rewards, TGE",
   },
   {
     title: "Ecosystem Growth",

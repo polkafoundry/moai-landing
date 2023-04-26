@@ -22,8 +22,7 @@ export function RoadMap() {
 
                 <FadeEffect show={show} x={-50}>
                   <div className='flex gap-4 flex-col-reverse mb-[40px]'>
-                    <div className='rounded-[24px] border border-[#FC9303] p-[20px]'>Airdrop, KOLs networking,
-                      Game Release, Staking&trading rewards, TGE</div>
+                    <div className='rounded-[24px] border border-[#FC9303] p-[20px]'>Airdrop, KOLs Networking, Game Release, Staking & Trading Rewards, TGE</div>
                     <div className='text-highlight text-center text-[20px] font-[500]'>Community Development</div>
                   </div>
                 </FadeEffect>

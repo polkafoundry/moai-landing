@@ -30,7 +30,7 @@ const NftCollection = ({ nftCollectionRef }: any) => {
         NFT collectibles
       </div>
       <p className="text-[14px] leading-[22px] mt-2 mx-auto text-center w-full px-5 max-w-[310px] opacity-80">
-        Special NFT collectible for special user to unlock special features
+        Unique NFT collectibles for users to unlock exclusive features
       </p>
       <div className="mt-5 text-center">
         <ExternalLink href={DISCORD_URL}>
@@ -50,7 +50,7 @@ const NftCollection = ({ nftCollectionRef }: any) => {
         Consumption NFT
       </div>
       <p className="text-[14px] leading-[22px] mt-2 mx-auto text-center w-full px-5 max-w-[310px] opacity-80">
-        Own NFT to navigate Wicked Moai game world and enjoy exciting game play
+        Own an NFT to explore the Wicked Moai game world and enjoy exciting gameplay
       </p>
       <div className="px-5 grid grid-cols-2 gap-[12px] mt-5">
         <Link href={`/?section=${HomeSection.ONCHAIN_GAME}`}>

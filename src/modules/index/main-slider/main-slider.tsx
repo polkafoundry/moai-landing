@@ -34,7 +34,7 @@ export const mainSliders = [
     power: "Airbending, Flying, Super speed",
     amount: 2500,
     traits: ["Everywhere and nowhere", "Invisible"],
-    desc: "The Adina tribe were ancient airbenders who received super speed, flight, and airbending powers. They can be present everywhere, detect unauthorized behavior anytime.",
+    desc: "The Adina tribe was ancient airbenders who received super speed, flying, and airbending powers. They can be present everywhere, detecting unauthorized behavior anytime.",
   },
   {
     backgroundImg: "/assets/bg-moai3.png",
@@ -43,7 +43,7 @@ export const mainSliders = [
     founder: "333 BC",
     power: "Energy Blast, Animal Creation & Shifting, Invulnerability",
     amount: 2450,
-    traits: ["Smooth", "Gentle", "Flow", "Divine strength", "Calm"],
+    traits: ["Controlling", "Powerful", "Arrogant"],
     desc: "The Agni tribe representing Fire was a peaceful yet occasionally arrogant group of enablers who have the connection so powerful that they can create energy blasts, perform animal creation and shifting, and they possess invulnerability. ",
   },
   {
@@ -54,7 +54,7 @@ export const mainSliders = [
     power: "Electricity, Barrier Creation, Mind-reading",
     amount: 1700,
     traits: ["Celestial", "Well-being", "Glow", "Subtle & Strong"],
-    desc: "The Aegle tribe possesses a vital component that symbolizes both civilization and life: light. They possess the ability to generate thunderbolts, construct barriers, and discern the thoughts of their adversaries. Aegle is synonymous with both insight and sagacity.",
+    desc: "The Aegle possessed a vital component that symbolizes both civilization and life: light. They held the ability to generate thunderbolts, create barriers, and read minds. Agle is synonymous with both insight and sagacity.",
   },
   {
     backgroundImg: "/assets/bg-moai5.png",
@@ -257,7 +257,7 @@ export function MainSlider() {
               style={{ background: "url(/assets/slogan-mask.png)" }}
               className="pointer-events-auto bg-cover bg-no-repeat w-[760px] h-[80px] flex justify-center items-center text-[32px] font-[500]"
             >
-              First fully on-chain game world on zkSync Era.
+              First fully on-chain game world on zkSync Era
             </div>
             {/* <img className='w-full' src='/assets/slogan.png' /> */}
           </div>

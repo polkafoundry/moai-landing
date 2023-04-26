@@ -3,23 +3,23 @@ import { FadeEffect } from "@/uikit/animation/fade-effect";
 import { ExternalLink } from "@/uikit/external-link";
 import { DiscordIcon } from "@/uikit/icons/discord-icon";
 import clsx from "clsx";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { HomeSection } from "../const";
 import { useScreenActive } from "../ctx";
 import styles from "./evil-club.module.scss";
 
 export const creators = [
-  { name: 'Tongariki', avatar: '/assets/creator-1.png', title: 'Senior artist', summary: '7+ years in gaming' },
-  { name: 'Akivi', avatar: '/assets/creator-2.png', title: 'Tech lead', summary: '10+ years in gaming' },
-  { name: 'Nau Nau', avatar: '/assets/creator-3.png', title: 'Music & audio', summary: '5+ years in gaming' },
-  { name: 'Vinapu', avatar: '/assets/creator-4.png', title: 'Blockchain lead', summary: '7+ years in gaming' },
-  { name: 'Tahai', avatar: '/assets/creator-5.png', title: 'Vfx, animation', summary: '5+ years in gaming' },
+  { name: 'Tongariki', avatar: '/assets/creator-1.png', title: 'Senior Artist', summary: '7+ years in gaming' },
+  { name: 'Akivi', avatar: '/assets/creator-2.png', title: 'Tech Leader', summary: '10+ years in gaming' },
+  { name: 'Nau Nau', avatar: '/assets/creator-3.png', title: 'Music & Audio', summary: '5+ years in gaming' },
+  { name: 'Vinapu', avatar: '/assets/creator-4.png', title: 'Blockchain Lead', summary: '7+ years in gaming' },
+  { name: 'Tahai', avatar: '/assets/creator-5.png', title: 'VFX & Animation', summary: '5+ years in gaming' },
   { name: 'Te Pito Kura', avatar: '/assets/creator-6.png', title: 'Marketing', summary: '5+ years in gaming' },
   { name: 'Ko Te Riku', avatar: '/assets/creator-7.png', title: 'Finance', summary: '10+ years in gaming' },
-  { name: 'Hanga Tetenga', avatar: '/assets/creator-2.png', title: 'Lead art', summary: '8+ years in gaming' },
-  { name: 'Akahanga', avatar: '/assets/creator-1.png', title: 'Project manager', summary: '12+ years in gaming' },
-  { name: 'O\'Pepe', avatar: '/assets/creator-3.png', title: 'QA/QC leader', summary: '7+ years in gaming' },
+  { name: 'Hanga Tetenga', avatar: '/assets/creator-2.png', title: 'Art Lead', summary: '8+ years in gaming' },
+  { name: 'Akahanga', avatar: '/assets/creator-1.png', title: 'Project Manager', summary: '12+ years in gaming' },
+  { name: 'O\'Pepe', avatar: '/assets/creator-3.png', title: 'QA/QC Leader', summary: '7+ years in gaming' },
 ]
 
 export function EvilClub() {

@@ -33,7 +33,7 @@ const AskedQuestion = ({ askQuestionRef }: any) => {
   return (
     <div className="pt-[60px]" ref={askQuestionRef}>
       <div className="max-w-[366px] mx-auto text-[32px] leading-[38px] text-center font-[500]">
-        Frequent Asked Quetions
+        Frequently Asked Questions
       </div>
       <div className="px-5 mt-[12px]">
         {faq?.map((item: any, index: number) => {

@@ -33,7 +33,7 @@ const Banner = ({}: Props) => {
             "text-[24px] text-center leading-[24px] font-[500] px-5"
           )}
         >
-          First fully on-chain game world on zkSync Era.
+          First fully on-chain game world on zkSync Era
         </div>
 
         <div className="col-span-6 lg:col-span-7 flex justify-center relative">

@@ -62,8 +62,7 @@ export function NftCollection() {
             </FadeEffect>
             <FadeEffect show={show} x={-100}>
               <div className="text-white/80 mb-[40px]">
-                Be a part of a rich and historic collection while immersing in
-                the game world.
+                Be part of a rich and historical collection while immersing in the legendary game world.
               </div>
             </FadeEffect>
             <FadeEffect show={show} y={50}>
@@ -83,8 +82,7 @@ export function NftCollection() {
                   <div className="flex-1 flex flex-col gap-[10px]">
                     <div className="text-[24px]">NFT collectibles</div>
                     <div className="text-white/50 text-[14px] w-full">
-                      Special NFT collectible for special user to unlock special
-                      features
+                      Unique NFT collectibles for users to unlock exclusive features
                     </div>
                     <div>
                       <ExternalLink href={DISCORD_URL}>
@@ -105,8 +103,7 @@ export function NftCollection() {
                   <div className="flex-1 flex flex-col gap-[10px]">
                     <div className="text-[24px]">Consumption NFT</div>
                     <div className="text-white/50 text-[14px] w-full">
-                      Own NFT to navigate Wicked Moai game world and enjoy
-                      exciting game play
+                      Own an NFT to explore the Wicked Moai game world and enjoy exciting gameplay
                     </div>
                     <div className="flex items-center gap-4 lg:flex-col xl:flex-row">
                       <Link
@@ -163,11 +160,11 @@ export function NftCollection() {
                         slidesPerView: 3,
                       },
                     }}
-                  autoplay={{
-                    reverseDirection: true,
-                    delay: 2000,
-                    disableOnInteraction: false,
-                  }}
+                    autoplay={{
+                      reverseDirection: true,
+                      delay: 2000,
+                      disableOnInteraction: false,
+                    }}
                   >
                     {collection1.map((item, idx) => (
                       <SwiperSlide key={idx}>

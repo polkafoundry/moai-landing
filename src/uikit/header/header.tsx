@@ -11,10 +11,10 @@ import { LITEPAPER } from "@/const/config";
 const navItems = [
   { label: "Storytelling", sec: HomeSection.STORY_TELLING },
   { label: "NFT Collection", sec: HomeSection.NFT_COLLECTION },
-  { label: "On-chain game", sec: HomeSection.ONCHAIN_GAME },
-  { label: "Moai club", sec: HomeSection.EVIL_CLUB },
-  { label: "$Moai", sec: HomeSection.MOAI_TOKEN },
-  { label: "Road map", sec: HomeSection.ROADMAP },
+  { label: "On-chain Game", sec: HomeSection.ONCHAIN_GAME },
+  { label: "Moai Club", sec: HomeSection.EVIL_CLUB },
+  { label: "$MOAI", sec: HomeSection.MOAI_TOKEN },
+  { label: "Roadmap", sec: HomeSection.ROADMAP },
   { label: "Litepaper", sec: "" },
   { label: "FAQ", sec: HomeSection.FAQ },
 ];

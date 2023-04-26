@@ -46,15 +46,15 @@ export function End() {
 
               </FadeEffect>
               <FadeEffect show={show} x={-30}>
-                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.ONCHAIN_GAME}`}>On-chain game</Link>
+                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.ONCHAIN_GAME}`}>On-chain Game</Link>
 
               </FadeEffect>
               <FadeEffect show={show} x={-25}>
-                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.EVIL_CLUB}`}>Moai club</Link>
+                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.EVIL_CLUB}`}>Moai Club</Link>
               </FadeEffect>
 
               <FadeEffect show={show} x={-20}>
-                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.MOAI_TOKEN}`}>$Moai</Link>
+                <Link className='hover:text-[var(--m-clr-text-orange)]' href={`/?section=${HomeSection.MOAI_TOKEN}`}>$MOAI</Link>
               </FadeEffect>
 
               <FadeEffect show={show} x={-15}>

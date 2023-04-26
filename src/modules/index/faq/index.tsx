@@ -16,62 +16,24 @@ export const faq = [
   {
     question: "2. Which blockchain is Wicked Moai on?",
     answer:
-      "zkSync. Consider as the best chain for on-chain game as its ability to offer fast and cheap transactions, Ethereum security, EVM compatible.",
+      "Considered the best option for on-chain games thanks to its ability to offer fast and low-cost transactions, Ethereum security, and EVM compatibility, the answer is zkSync.",
   },
   {
     question: "3. How is the on-chain game world utilized in Wicked Moai?",
-    answer: (
-      <>
-        The Wicked Moai development team aim to build an on-chain game world
-        that take advantage of the unique gameplay that blockchain offers:
-        <ul>
-          <li>- More transparency and security in the game's economy</li>
-          <li>
-            - Allow each individual player full autonomy for decentralized
-            governance and decision-making
-          </li>
-        </ul>
-      </>
-    ),
+    answer: "The Wicked Moai development team aims to build an on-chain game world that takes advantage of the unique gameplay that blockchain has to offer - more transparency and security for in-game economy, and full autonomy or individual players that contributes to decentralized governance.",
   },
   {
     question: "4. What is Wicked Moai's token?",
-    answer: (
-      <>
-        $MOAI. Token utitilies:
-        <ul>
-          <li>- In-game economy</li>
-          <li>- game world grands</li>
-          <li>- Trading</li>
-          <li>- Reward</li>
-          <li>- Governance</li>
-        </ul>
-      </>
-    ),
+    answer: "Wicked Moai's token is the $MOAI, with utilities include the in-game economy, trading purposes, community rewards, governance purposes, and token grants for game world contributors.",
   },
   {
     question: "5. What types of NFTs are available in Wicked Moai?",
-    answer: (
-      <>
-        NFTs collectible and in-game NFTs
-        <ul>
-          <li>
-            - NFT collectibles: Sui generis Wicked Moai NFTs collection,
-            initiate ownership, community membership and other benefits for
-            holders.
-          </li>
-          <li>
-            - In-game NFT: Designed separatedly for each game in Wicked Moai
-            World for gaming purposes.
-          </li>
-        </ul>
-      </>
-    ),
+    answer: "NFT collectibles and in-game NFTs, with NFT collectibles offering community membership and various benefits for holders, while in-game NFTs act as a centerpiece of the game.",
   },
   {
-    question: "6. How many NFTs available in the collection?",
+    question: "6. How many NFTs are available in the collection?",
     answer:
-      "10430 Moai NFTs, devided into 5 different tribes with distictive backstories, representing 5 powers: Wind, Earth, Water, Fire and Light.",
+      "There are 10,430 Wicked Moai NFTs in total, dividing into 5 tribes with different backstories, representing Earth, Water, Fire, Air, and Light.",
   },
   {
     question:
@@ -142,7 +104,7 @@ export function FAQ() {
       <div className="container relative z-10 bg-transparent">
         <FadeEffect show={show} y={-50}>
           <h1 className="text-[48px] font-[500] mb-[30px]">
-            Frequent Asked Questions
+            Frequently Asked Questions
           </h1>
         </FadeEffect>
 

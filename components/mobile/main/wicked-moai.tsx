@@ -74,7 +74,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         Wicked Moai
       </div>
       <p className="text-[14px] leading-[16px] text-[#F98306] text-center font-[500] max-w-[280px] mx-auto mt-[12px]">
-        Join the Wicked Moai game world fully on-chain.
+        Join the fully on-chain Wicked Moai game world.
       </p>
       <VideoGameplay
         className="mt-5"

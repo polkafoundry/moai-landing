@@ -63,7 +63,7 @@ export function OnChainGame() {
           <div className="flex items-baseline gap-2">
             <h1 className="text-[48px] font-[500]">Wicked Moai</h1>
             <div className="text-[20px] text-[#E76F16]">
-              Join the Wicked Moai game world fully on-chain.
+              Join the fully on-chain Wicked Moai game world.
             </div>
           </div>
           {/* </FadeEffect> */}
