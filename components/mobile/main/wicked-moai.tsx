@@ -82,7 +82,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-1-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Aqua: Depths of Water
+        Depths of Water
       </p>
       <VideoGameplay
         className="mt-10"
@@ -90,7 +90,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-2-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Adina: Tempest of Air
+        Tempest of Air
       </p>
       <VideoGameplay
         className="mt-10"
@@ -98,7 +98,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-3-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Agni: Inferno of Fire
+        Inferno of Fire
       </p>
       <VideoGameplay
         className="mt-10"
@@ -106,7 +106,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-4-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Aegle: Radiance of Light
+        Radiance of Light
       </p>
       <VideoGameplay
         className="mt-10"
@@ -114,7 +114,7 @@ const WickedMoai = ({ wickedMoaiRef }: any) => {
         preview="/assets/game-5-preview-mobile.png"
       />
       <p className="mt-[25px] text-[24px] leading-[28px] font-[500] text-center">
-        Aaren: Echoes of Earth
+        Echoes of Earth
       </p>
     </div>
   );
