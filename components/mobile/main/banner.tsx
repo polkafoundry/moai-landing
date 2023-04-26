@@ -22,6 +22,7 @@ const Banner = ({}: Props) => {
         style={{
           backgroundImage: `url(${mainSliders[swiperIndex]?.backgroundImg})`,
           backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       />
       <div className="relative z-10 pb-8 pt-[60px]">
