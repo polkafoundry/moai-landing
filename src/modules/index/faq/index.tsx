@@ -28,33 +28,29 @@ export const faq = [
   },
   {
     question: "5. What types of NFTs are available in Wicked Moai?",
-    answer: "NFT collectibles and in-game NFTs, with NFT collectibles offering community membership and various benefits for holders, while in-game NFTs act as a centerpiece of the game.",
+    answer: "NFT collectibles and in-game NFTs, with NFT collectibles as a remarkable hand-drawn PfP collection offering community membership and various benefits for holders, while in-game NFTs act as a centerpiece of the games.",
   },
   {
     question: "6. How many NFTs are available in the collection?",
     answer:
-      "There are 10,430 Wicked Moai NFTs in total, dividing into 5 tribes with different backstories, representing Earth, Water, Fire, Air, and Light.",
+      "There are 1,043 Wiked Moai NFTs in total,  dividing into 5 tribes with different backstories, representing Earth, Water, Fire, Air, and Light.",
   },
   {
     question:
       "7. What is the rarity system for Wicked Moai NFTs and how does it affect game world experience?",
     answer:
-      "Wicked Moai NFT are a 10,430 piece collection of digital collectibles, created by the Moai artist club and features unique storytelling that reflects the complexities of human psyche. As Moai was historically imbued with the spirit of the divine, each NFT is meaningful and thought-provoking, capturing the duality of human nature. With the expiration of certain NFT collections, the rarity might increase and favor the early holders of the game.",
+      "Wicked Moai NFTs are a 1,043 piece hand-drawn PfP collection of digital collectibles, created by the Moai artist club and features unique storytelling that reflects the complexities of human psyche. As Moai was historically imbued with the spirit of the divine, each NFT is meaningful and thought-provoking, capturing the duality of human nature. With the expiration of certain NFT collections, the rarity might increase and favor the early holders of the game.",
   },
   {
     question: "8. What is Wicked Moai Game World?",
     answer:
-      "Wicked Moai game world is called The zkMoai Gaming World, named after the zkSync solution used for the project's technological layer. It is a platform that's open and community-driven. Users can create their own storylines and games for the characters, fostering creativity and imagination. The developers are encouraging artists, creators, and storytellers to join them in building an incredible community.",
+      "Wicked Moai Game World is a platform that's open and community-driven. Our character set serves as the hub of the game world and will be used in all games created on the platform. Users can create their own storylines and games for the characters, fostering creativity and imagination. The developers are encouraging artists, creators, and storytellers to join them in building an incredible community.",
   },
   {
     question: "9. How can users contribute to the development of Wicked Moai?",
     answer: (
       <>
-        Join zkMoai Gaming World open for Developers to freely utilize a
-        character set with an initial story and a few games, encourage potential
-        builders to jump in and the rest of the story is up entirely to the
-        community’s creativity and imagination. Any ideas for Wicked Moai can be
-        contributed{" "}
+        Join Wicked Moai game world open for Developers to freely utilize our Moai character set with an initial story and a few games, encourage potential builders to jump in and the rest of the story is up entirely to the community’s creativity and imagination. Any ideas for Wicked Moai can be contributed{" "}
         <ExternalLink
           className="text-[var(--m-clr-text-orange)]"
           href={CONTRIBUTE_FORM_URL}

@@ -48,7 +48,7 @@ export function MoaiToken() {
                       <ExternalLink href={LITEPAPER}>
                         <button className="btn-white w-full">
                           <div className="flex items-center justify-center gap-2 hover:scale-[1.1] duration-150">
-                            <WhitePaperIcon /> WHITEPAPER
+                            <WhitePaperIcon /> LITEPAPER
                           </div>
                         </button>
                       </ExternalLink>
