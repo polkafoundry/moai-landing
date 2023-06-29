@@ -156,7 +156,7 @@ export function MainSlider() {
                       </h2>
                       <div className="grid grid-cols-4 gap-[10px]">
                         <div className="text-white/60 text-[14px] w-[70px]">
-                          FOUNDER
+                          FOUNDED
                         </div>{" "}
                         <span className="col-span-3">{item.founder}</span>
                         <span className="text-white/60 text-[14px] w-[70px]">

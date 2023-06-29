@@ -85,7 +85,7 @@ const Banner = ({}: Props) => {
             <div className="flex flex-col gap-[4px]">
               <div className="flex text-[14px]">
                 <div className="text-white/60 w-[72px] min-w-[72px]">
-                  FOUNDER
+                  FOUNDED
                 </div>{" "}
                 <span>{mainSliders[swiperIndex]?.founder}</span>
               </div>
@@ -125,7 +125,13 @@ const Banner = ({}: Props) => {
                 Play game
               </button>
             </Link>
-            <button className={clsx("btn-cta-second", "w-full mt-2 disabled:opacity-70")} disabled>
+            <button
+              className={clsx(
+                "btn-cta-second",
+                "w-full mt-2 disabled:opacity-70"
+              )}
+              disabled
+            >
               <div className="relative z-10 flex items-center gap-2 justify-center">
                 <OpenseaIcon /> View collectible
               </div>
